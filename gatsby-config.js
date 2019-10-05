@@ -1,6 +1,6 @@
 module.exports = {
   plugins: [
-    `gatsby-mdx`,
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -14,7 +14,12 @@ module.exports = {
         path: `${__dirname}/blog`,
         name: `blog`,
       },
+    },    
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [],
+      },
     },
-    `gatsby-transformer-json`,
   ],
 }

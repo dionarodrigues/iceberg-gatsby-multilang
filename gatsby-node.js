@@ -46,10 +46,10 @@ exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
 
   // Check for "Mdx" type so that other files (e.g. images) are exluded
-  if (node.internal.type === `Mdx`) {
+  if (node.internal.type === `MarkdownRemark`) {
     // Use path.basename
     // https://nodejs.org/api/path.html#path_path_basename_path_ext
-    const name = path.basename(node.fileAbsolutePath, `.mdx`)
+    const name = path.basename(node.fileAbsolutePath, `.md`)
 
     // Check if post.name is "index" -- because that's the file for default language
     // (In this case "en")
@@ -87,7 +87,7 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             relativeDirectory
-            childMdx {
+            childMarkdownRemark {
               fields {
                 locale
                 isDefault
@@ -116,13 +116,13 @@ exports.createPages = async ({ graphql, actions }) => {
     // relativeDirectory is the name of the folder
     //const slug = post.relativeDirectory.slice(11)
 
-    const slug = post.childMdx.fields.slug
+    const slug = post.childMarkdownRemark.fields.slug
 
-    const title = post.childMdx.frontmatter.title
+    const title = post.childMarkdownRemark.frontmatter.title
 
     // Use the fields created in exports.onCreateNode
-    const locale = post.childMdx.fields.locale
-    const isDefault = post.childMdx.fields.isDefault
+    const locale = post.childMarkdownRemark.fields.locale
+    const isDefault = post.childMarkdownRemark.fields.isDefault
 
     createPage({
       path: localizedSlug({ isDefault, locale, slug }),

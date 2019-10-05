@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import LocalizedLink from "../components/localizedLink"
 import useTranslations from "../components/useTranslations"
 
-const Blog = ({ data: { allMdx } }) => {
+const Blog = ({ data: { allMarkdownRemark } }) => {
   // useTranslations is aware of the global context (and therefore also "locale")
   // so it'll automatically give back the right translations
   const { hello, subline } = useTranslations()
@@ -13,7 +13,7 @@ const Blog = ({ data: { allMdx } }) => {
       <h1>Blog</h1>
       <hr style={{ margin: `2rem 0` }} />
       <ul className="post-list">
-        {allMdx.edges.map(({ node: post }) => (
+        {allMarkdownRemark.edges.map(({ node: post }) => (
           <li key={`${post.frontmatter.title}-${post.fields.locale}`}>
             {/* <LocalizedLink to={`/${post.parent.relativeDirectory.slice(11)}`}> */}
             <LocalizedLink to={`/blog/${post.fields.slug}`}>
@@ -33,7 +33,7 @@ export default Blog
 
 export const query = graphql`
   query Blog($locale: String!, $dateFormat: String!) {
-    allMdx(
+    allMarkdownRemark(
       filter: { fields: { locale: { eq: $locale } } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
