@@ -1,5 +1,7 @@
 {  
   "homepage": "Home",
+  "about": "About me",
+  "posts": "Posts",
   "category": "Category",
   "hello": "Hello and welcome to this i18n example site!",
   "subline": "You can read some of cool articles I found on the internet! :)",

@@ -79,7 +79,9 @@ exports.onCreateNode = ({ node, actions }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const postTemplate = require.resolve(`./src/templates/post.js`)
+  // Templates for Posts List and Single post
+  const postTemplate = path.resolve(`./src/templates/post.js`)
+  const postsListTemplate = path.resolve(`./src/templates/blog-list.js`)
 
   const result = await graphql(`
     {
@@ -97,6 +99,7 @@ exports.createPages = async ({ graphql, actions }) => {
             frontmatter {
               title
               category
+              description
             }
           }
         }
@@ -134,4 +137,36 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+  // Crating Pagination
+  const postsPerPage = 6
+  const langs = Object.keys(locales).length
+  const numPages = Math.ceil((postList.length/langs) / postsPerPage)   
+
+  Object.keys(locales).map(lang => {
+
+    // Use the values defined in "locales" to construct the path
+    const localizedPath = locales[lang].default
+      ? '/posts'
+      : `${locales[lang].path}/posts`     
+
+    return Array.from({ length: numPages }).forEach((_, index) => {
+      
+      createPage({
+        path: index === 0 ? `${localizedPath}` : `${localizedPath}/page/${index + 1}`,
+        component: postsListTemplate,
+        context: {
+          limit: postsPerPage,
+          skip: index * postsPerPage,
+          numPages,
+          currentPage: index + 1,
+          locale: lang,
+          dateFormat: locales[lang].dateFormat,
+        }, 
+      })
+
+    })
+    
+  })
+
 }

@@ -15,11 +15,10 @@ const Blog = ({ data: { allMarkdownRemark } }) => {
       <ul className="post-list">
         {allMarkdownRemark.edges.map(({ node: post }) => (
           <li key={`${post.frontmatter.title}-${post.fields.locale}`}>
-            {/* <LocalizedLink to={`/${post.parent.relativeDirectory.slice(11)}`}> */}
             <LocalizedLink to={`/blog/${post.fields.slug}`}>
               {post.frontmatter.title}
               < br />
-              <small>{post.excerpt}</small>
+              <small>{post.frontmatter.description}</small>
             </LocalizedLink>
             <div>{post.frontmatter.date}</div>
           </li>
@@ -32,24 +31,23 @@ const Blog = ({ data: { allMarkdownRemark } }) => {
 export default Blog
 
 export const query = graphql`
-  query Blog($locale: String!, $dateFormat: String!) {
+  query PostsList($locale: String!, $dateFormat: String!, $skip: Int!, $limit: Int!) {
     allMarkdownRemark(
-      filter: { 
-        fields: { locale: { eq: $locale } } 
-        fileAbsolutePath: {regex: "/(blog)/.*\\\\.md$/"}
-      }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
+      sort: {fields: frontmatter___date, order: DESC}, 
+      filter: {fields: {locale: {eq: $locale}}, fileAbsolutePath: {regex: "/(blog)/.*\\\\.md$/"}}
+      limit: $limit
+      skip: $skip
+    ){
       edges {
         node {
           frontmatter {
             title
             category
+            description
             date(formatString: $dateFormat)
           }
           fields {
             locale
-            isDefault
             slug
           }
         }

@@ -32,6 +32,8 @@ const query = graphql`
           name
           translations: childTranslationsJson {
             homepage
+            about
+            posts
             category
             hello
             subline
