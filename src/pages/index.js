@@ -6,13 +6,14 @@ import useTranslations from "../components/useTranslations"
 const Index = ({ data: { allMarkdownRemark } }) => {
   // useTranslations is aware of the global context (and therefore also "locale")
   // so it'll automatically give back the right translations
-  const { hello, subline, category } = useTranslations()
+  const { hello, subline, category, latestPosts, allPosts } = useTranslations()
 
   return (
     <>
       <h1>{hello}</h1>
       <p>{subline}</p>
       <hr style={{ margin: `2rem 0` }} />
+      <h2>{latestPosts}</h2>
       <ul className="post-list">
         {allMarkdownRemark.edges.map(({ node: post }) => (
           <li key={`${post.frontmatter.title}-${post.fields.locale}`}>
@@ -28,6 +29,10 @@ const Index = ({ data: { allMarkdownRemark } }) => {
           </li>
         ))}
       </ul>
+      <br />
+      <LocalizedLink to={`/blog/`}>
+        {allPosts}
+      </LocalizedLink>
     </>
   )
 }
@@ -39,6 +44,7 @@ export const query = graphql`
     allMarkdownRemark(
       filter: { fields: { locale: { eq: $locale } } }
       sort: { fields: [frontmatter___date], order: DESC }
+      limit: 3
     ) {
       edges {
         node {

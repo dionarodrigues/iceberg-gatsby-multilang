@@ -31,11 +31,13 @@ const query = graphql`
         node {
           name
           translations: childTranslationsJson {
+            homepage
+            category
             hello
             subline
             backToHome
-            category
-            homepage
+            latestPosts
+            allPosts
           }
         }
       }
