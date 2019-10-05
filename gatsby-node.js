@@ -83,20 +83,20 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const result = await graphql(`
     {
-      blog: allFile(filter: { sourceInstanceName: { eq: "blog" } }) {
+      blog: allMarkdownRemark(
+        filter: { fileAbsolutePath: {regex: "/(blog)/.*\\\\.md$/"} }
+        sort: { fields: [frontmatter___date], order: DESC }
+        ){
         edges {
           node {
-            relativeDirectory
-            childMarkdownRemark {
-              fields {
-                locale
-                isDefault
-                slug
-              }
-              frontmatter {
-                title
-                category
-              }
+            fields {
+              locale
+              isDefault
+              slug
+            }
+            frontmatter {
+              title
+              category
             }
           }
         }
@@ -111,18 +111,16 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const postList = result.data.blog.edges
 
+  // Creating each post
   postList.forEach(({ node: post }) => {
-    // All files for a blogpost are stored in a folder
-    // relativeDirectory is the name of the folder
-    //const slug = post.relativeDirectory.slice(11)
 
-    const slug = post.childMarkdownRemark.fields.slug
-
-    const title = post.childMarkdownRemark.frontmatter.title
+    // Getting Slug and Title
+    const slug = post.fields.slug
+    const title = post.frontmatter.title
 
     // Use the fields created in exports.onCreateNode
-    const locale = post.childMarkdownRemark.fields.locale
-    const isDefault = post.childMarkdownRemark.fields.isDefault
+    const locale = post.fields.locale
+    const isDefault = post.fields.isDefault
 
     createPage({
       path: localizedSlug({ isDefault, locale, slug }),

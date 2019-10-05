@@ -34,24 +34,23 @@ export default Blog
 export const query = graphql`
   query Blog($locale: String!, $dateFormat: String!) {
     allMarkdownRemark(
-      filter: { fields: { locale: { eq: $locale } } }
+      filter: { 
+        fields: { locale: { eq: $locale } } 
+        fileAbsolutePath: {regex: "/(blog)/.*\\\\.md$/"}
+      }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
         node {
           frontmatter {
             title
+            category
             date(formatString: $dateFormat)
           }
-          excerpt
           fields {
             locale
+            isDefault
             slug
-          }
-          parent {
-            ... on File {
-              relativeDirectory
-            }
           }
         }
       }
