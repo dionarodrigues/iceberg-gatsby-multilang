@@ -6,8 +6,7 @@ module.exports = {
     siteUrl: `http://gatsby-multiple-language`,
   },
   plugins: [
-    `gatsby-transformer-json`,
-    `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-json`,    
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -28,5 +27,22 @@ module.exports = {
         plugins: [],
       },
     },
+
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Gatsby multiple language`,
+        short_name: `Gatsby multiple language`,
+        start_url: `/`,
+        background_color: `#ddd`,
+        theme_color: `#000`,
+        display: `minimal-ui`,
+        //icon: `src/images/gatsby-icon.png`
+      },
+    },
+    
   ],
 }
