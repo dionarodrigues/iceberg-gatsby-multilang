@@ -1,6 +1,13 @@
 module.exports = {
+  siteMetadata: {
+    title: `Gatsby multiple language`,
+    description: ``,
+    author: `@diogorodrigues`,
+    siteUrl: `http://gatsby-multiple-language`,
+  },
   plugins: [
     `gatsby-transformer-json`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

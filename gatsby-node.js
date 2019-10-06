@@ -131,7 +131,7 @@ exports.createPages = async ({ graphql, actions }) => {
         // Only the title would not have been sufficient as articles could have the same title
         // in different languages, e.g. because an english phrase is also common in german
         locale,
-        title,
+        title
       },
     })
   })

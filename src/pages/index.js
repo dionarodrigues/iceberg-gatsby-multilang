@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import SEO from "../components/seo"
 import LocalizedLink from "../components/localizedLink"
 import useTranslations from "../components/useTranslations"
 
@@ -10,6 +11,7 @@ const Index = ({ data: { allMarkdownRemark } }) => {
 
   return (
     <>
+      <SEO title="Home" />
       <h1>{hello}</h1>
       <p>{subline}</p>
       <hr style={{ margin: `2rem 0` }} />

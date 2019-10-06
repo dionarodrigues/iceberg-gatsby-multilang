@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import LocalizedLink from "../components/localizedLink"
-import useTranslations from "../components/useTranslations"
+import SEO from "../components/seo"
 
 import Pagination from "../components/Pagination"
 
@@ -17,6 +17,7 @@ const Blog = props => {
 
   return (
     <>
+      <SEO title="Blog" />
       <h1>Blog</h1>
       <hr style={{ margin: `2rem 0` }} />
       <ul className="post-list">
@@ -44,8 +45,6 @@ const Blog = props => {
   )
 }
 
-export default Blog
-
 export const query = graphql`
   query PostsList($locale: String!, $dateFormat: String!, $skip: Int!, $limit: Int!) {
     allMarkdownRemark(
@@ -71,3 +70,5 @@ export const query = graphql`
     }
   }
 `
+
+export default Blog
