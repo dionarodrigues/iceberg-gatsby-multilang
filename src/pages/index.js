@@ -30,7 +30,7 @@ const Index = ({ data: { allMarkdownRemark } }) => {
         ))}
       </ul>
       <br />
-      <LocalizedLink to={`/blog/`}>
+      <LocalizedLink to={`/posts/`}>
         {allPosts}
       </LocalizedLink>
     </>

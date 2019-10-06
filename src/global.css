@@ -69,3 +69,11 @@ body {
   --baseline-multiplier: 0.179;
   --x-height-multiplier: 0.35;
 }
+
+.pagination {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}

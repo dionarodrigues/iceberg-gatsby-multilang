@@ -3,17 +3,24 @@ import { graphql } from "gatsby"
 import LocalizedLink from "../components/localizedLink"
 import useTranslations from "../components/useTranslations"
 
-const Blog = ({ data: { allMarkdownRemark } }) => {
-  // useTranslations is aware of the global context (and therefore also "locale")
-  // so it'll automatically give back the right translations
-  const { hello, subline } = useTranslations()
+import Pagination from "../components/Pagination"
+
+const Blog = props => {
+  const postList = props.data.allMarkdownRemark.edges
+
+  // Logic for Pagination Component
+  const { currentPage, numPages } = props.pageContext
+  const isFirst = currentPage === 1
+  const isLast = currentPage === numPages
+  const prevPage = currentPage - 1 === 1 ? '/posts' : `/posts/${currentPage - 1}`
+  const nextPage = `/posts/page/${currentPage + 1}`
 
   return (
     <>
       <h1>Blog</h1>
       <hr style={{ margin: `2rem 0` }} />
       <ul className="post-list">
-        {allMarkdownRemark.edges.map(({ node: post }) => (
+        {postList.map(({ node: post }) => (
           <li key={`${post.frontmatter.title}-${post.fields.locale}`}>
             <LocalizedLink to={`/blog/${post.fields.slug}`}>
               {post.frontmatter.title}
@@ -24,6 +31,15 @@ const Blog = ({ data: { allMarkdownRemark } }) => {
           </li>
         ))}
       </ul>
+      
+      <Pagination
+        isFirst={isFirst}
+        isLast={isLast}
+        currentPage={currentPage}
+        numPages={numPages}
+        prevPage={prevPage}
+        nextPage={nextPage}
+      />
     </>
   )
 }

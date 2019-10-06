@@ -81,7 +81,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Templates for Posts List and Single post
   const postTemplate = path.resolve(`./src/templates/post.js`)
-  const postsListTemplate = path.resolve(`./src/templates/blog-list.js`)
+  const postsListTemplate = path.resolve(`./src/templates/posts-list.js`)
 
   const result = await graphql(`
     {
