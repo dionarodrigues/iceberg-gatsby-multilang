@@ -1,7 +1,6 @@
 import React from "react"
-import { graphql } from "gatsby"
+import propTypes from "prop-types"
 import LocalizedLink from "../components/localizedLink"
-import useTranslations from "../components/useTranslations"
 
 const Pagination = ({
   isFirst,
@@ -27,6 +26,15 @@ const Pagination = ({
       </li>
     </ul>
   )
+}
+
+Pagination.propTypes = {
+  isFirst: propTypes.bool.isRequired,
+  isLast: propTypes.bool.isRequired,
+  currentPage: propTypes.number.isRequired,
+  numPages: propTypes.number.isRequired,
+  prevPage: propTypes.string,
+  nextPage: propTypes.string,
 }
 
 export default Pagination
