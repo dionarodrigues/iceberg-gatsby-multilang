@@ -3,7 +3,7 @@ module.exports = {
     title: `Gatsby multiple language`,
     description: ``,
     author: `@diogorodrigues`,
-    siteUrl: `http://gatsby-multiple-language`,
+    siteUrl: `http://localhost:8000`,
   },
   plugins: [
     `gatsby-transformer-json`, 

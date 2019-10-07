@@ -10,7 +10,11 @@ const Post = props => {
 
   return (
     <>
-      <SEO title={post.frontmatter.title} />
+      <SEO 
+        title={post.frontmatter.title} 
+        description={post.frontmatter.description} 
+        image={post.frontmatter.image} 
+      />
       <div className="blogpost">
         <h1>{post.frontmatter.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
@@ -27,6 +31,8 @@ export const query = graphql`
     ) {
       frontmatter {
         title
+        description
+        image
       }
       html
     }
