@@ -9,12 +9,12 @@ const SocialLinks = () => {
   return(
     <S.SocialLinksList>
       <S.SocialLinksItem>
-        <S.SocialLinksLink to="" title="Github">
+        <S.SocialLinksLink to="https://github.com/diogorodrigues/iceberg-gatsby-multilang" title="Github">
           <Github />
         </S.SocialLinksLink>
       </S.SocialLinksItem> 
       <S.SocialLinksItem>
-        <S.SocialLinksLink to="" title="Twitter">
+        <S.SocialLinksLink to="https://twitter.com/_diogorodrigues" title="Twitter">
           <Twitter />
         </S.SocialLinksLink>
       </S.SocialLinksItem>           
