@@ -2,12 +2,14 @@ import React from "react"
 import { Link } from "gatsby"
 import LocalizedLink from "../LocalizedLink"
 import useTranslations from "../useTranslations"
+import Logo from "../Logo"
 
 const Navigation = () => {
   const { backToHome, homepage, about, posts } = useTranslations()
 
   return (
     <nav>
+      <Logo />
       <LocalizedLink to="/" aria-label={backToHome}>
         {homepage}
       </LocalizedLink>
