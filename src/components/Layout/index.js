@@ -1,5 +1,8 @@
 import React from "react"
-import Navigation from "../Navigation"
+import Header from "../Header"
+import GlobalStyles from "../../styles/global"
+
+import * as S from "./styled"
 
 const LocaleContext = React.createContext()
 
@@ -9,11 +12,14 @@ const LocaleContext = React.createContext()
 // the locale available everywhere!
 const Layout = ({ children, pageContext: { locale } }) => (
   <LocaleContext.Provider value={{ locale }}>
-    <div className="global-wrapper">
-      <header className="global-header">
-        <Navigation />
-      </header>
-      <main>{children}</main>
+    <GlobalStyles />
+    <div className="site-wrapper">
+      <Header />
+      <main role="main" className="site-content">
+        <S.Container>
+          {children}
+        </S.Container>
+      </main>
     </div>
   </LocaleContext.Provider>
 )

@@ -1,34 +1,25 @@
 import React from "react"
-import { Link } from "gatsby"
-import LocalizedLink from "../LocalizedLink"
 import useTranslations from "../useTranslations"
-import Logo from "../Logo"
+
+import * as S from './styled'
 
 const Navigation = () => {
   const { backToHome, homepage, about, posts } = useTranslations()
 
   return (
-    <nav>
-      <Logo />
-      <LocalizedLink to="/" aria-label={backToHome}>
-        {homepage}
-      </LocalizedLink>
-      <LocalizedLink to="/about" aria-label={about}>
-        {about}
-      </LocalizedLink>
-      <LocalizedLink to="/posts" aria-label={posts}>
-        {posts}
-      </LocalizedLink>
-      <div>
-        <Link to="/" hrefLang="en">
-          English
-        </Link>
-        {` `}/{` `}
-        <Link to="/pt" hrefLang="pt">
-          Português
-        </Link>
-      </div>
-    </nav>
+    <>
+      <S.Navigation>   
+        <S.NavigationLink to="/" aria-label={backToHome}>
+          {homepage}
+        </S.NavigationLink>
+        <S.NavigationLink to="/about" aria-label={about}>
+          {about}
+        </S.NavigationLink>
+        <S.NavigationLink to="/posts" aria-label={posts}>
+          {posts}
+        </S.NavigationLink>
+      </S.Navigation>  
+    </>
   )
 }
 

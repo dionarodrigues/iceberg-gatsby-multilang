@@ -19,15 +19,13 @@ const Index = ({ data: { allMarkdownRemark } }) => {
       <ul className="post-list">
         {allMarkdownRemark.edges.map(({ node: post }) => (
           <li key={`${post.frontmatter.title}-${post.fields.locale}`}>
-            {/* <LocalizedLink to={`/${post.parent.relativeDirectory.slice(11)}`}> */}
             <LocalizedLink to={`/blog/${post.fields.slug}`}>
               {post.frontmatter.title}
               < br />
-              {/* <small>{post.frontmatter.description}</small>
-              <br /> */}
               <small>{category}: {post.frontmatter.category}</small>
             </LocalizedLink>
             <div>{post.frontmatter.date}</div>
+            <br />
           </li>
         ))}
       </ul>

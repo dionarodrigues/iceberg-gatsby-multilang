@@ -29,6 +29,7 @@ const Blog = props => {
               <small>{post.frontmatter.description}</small>
             </LocalizedLink>
             <div>{post.frontmatter.date}</div>
+            <br />
           </li>
         ))}
       </ul>
