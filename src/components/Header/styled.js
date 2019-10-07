@@ -5,7 +5,7 @@ export const HeaderWrapper = styled.div`
   background: red;
   margin-bottom: 30px;
   min-height: 4rem;
-  background-color: #663299;
+  background-color: var(--mainColor);
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);  
   color: #fff;
 `

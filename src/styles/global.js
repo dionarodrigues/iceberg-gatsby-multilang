@@ -64,7 +64,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    --maxWidth: 1200px;
+    --mainColor: #7d4cdb;
   }
 `
 export default GlobalStyles
