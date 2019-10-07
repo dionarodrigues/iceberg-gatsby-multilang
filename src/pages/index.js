@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import SEO from "../components/seo"
-import LocalizedLink from "../components/localizedLink"
+import LocalizedLink from "../components/LocalizedLink"
 import useTranslations from "../components/useTranslations"
 
 const Index = ({ data: { allMarkdownRemark } }) => {

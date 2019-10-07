@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
-import LocalizedLink from "../components/localizedLink"
+import LocalizedLink from "../components/LocalizedLink"
 import SEO from "../components/seo"
 
-import Pagination from "../components/Pagination"
+import Pagination from "../components/pagination"
 
 const Blog = props => {
   const postList = props.data.allMarkdownRemark.edges

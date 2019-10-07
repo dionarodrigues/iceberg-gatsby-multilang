@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import LocalizedLink from "./localizedLink"
-import useTranslations from "./useTranslations"
+import LocalizedLink from "../LocalizedLink"
+import useTranslations from "../useTranslations"
 
 const Navigation = () => {
   const { backToHome, homepage, about, posts } = useTranslations()

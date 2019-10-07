@@ -1,6 +1,6 @@
 import React from "react"
 import propTypes from "prop-types"
-import LocalizedLink from "../components/localizedLink"
+import LocalizedLink from "../LocalizedLink"
 
 const Pagination = ({
   isFirst,
