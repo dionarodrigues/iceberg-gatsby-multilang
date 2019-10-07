@@ -1,3 +1,5 @@
+import "lazysizes"
+
 import CustomLayout from "./wrapPageElement"
 import "./src/global.css"
 
