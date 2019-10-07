@@ -63,6 +63,10 @@ const GlobalStyles = createGlobalStyle`
   	height: auto;
   }
 
+  a {
+    color: var(--mainColor)
+  }
+
   body {
     --mainColor: #7d4cdb;
   }
