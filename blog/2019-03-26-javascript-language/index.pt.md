@@ -1,9 +1,9 @@
 ---
-title: 'Linguagem JavaScript - Exemplos de códigos'
+title: 'Linguagem JavaScript - Exemplos de códigos usando PrismJS'
 date: 2019-03-26 11:21:56
 description: JavaScript, frequentemente abreviado como JS, é uma linguagem de script interpretada de alto nível que está em conformidade com a especificação ECMAScript.
 category: Javascript
-background: ##e84393
+background: #e58e26
 ---
 
 JavaScript (/ ˈdʒɑːvəˌskrɪpt /), geralmente abreviado como JS, é uma linguagem de script interpretada de alto nível que está em conformidade com a especificação ECMAScript. O JavaScript possui sintaxe entre colchetes, digitação dinâmica, orientação a objetos com base em protótipo e funções de primeira classe.
