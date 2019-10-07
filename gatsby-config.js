@@ -62,8 +62,7 @@ module.exports = {
     },
 
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,
-    `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`,    
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -76,6 +75,8 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`
       },
     },
-    
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.dev/offline
+    `gatsby-plugin-offline`,    
   ],
 }
