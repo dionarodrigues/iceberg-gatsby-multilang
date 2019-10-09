@@ -45,31 +45,32 @@ exports.onCreatePage = ({ page, actions }) => {
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
 
-  // Check for "Mdx" type so that other files (e.g. images) are exluded
+  // Check for "MarkdownRemark" type so that other files (e.g. images) are exluded
   if (node.internal.type === `MarkdownRemark`) {
+
     // Use path.basename
     // https://nodejs.org/api/path.html#path_path_basename_path_ext
+    // It will return the file name without '.md' string (e.g. "file-name" or "file-name.lang")
     const name = path.basename(node.fileAbsolutePath, `.md`)
 
-    // Check if post.name is "index" -- because that's the file for default language
-    // (In this case "en")
-    const isDefault = name === `index`
+    // Check if file.name has lang type. If "undefined" it means the file is the default language
+    // (e.g. name.split(`.`)[1] => "file-name" returns "undefined", but "file-name.lang" returns "lang")
+    // (in this case the default language is for files set with "en")
+    const isDefault = name.split(`.`)[1] === undefined
 
     // Find the key that has "default: true" set (in this case it returns "en")
     const defaultKey = findKey(locales, o => o.default === true)
 
-    // Files are defined with "name-with-dashes.lang.mdx"
-    // name returns "name-with-dashes.lang"
+    // Files are defined with "name-with-dashes.lang.md"
+    // "name" returns "name-with-dashes.lang"
     // So grab the lang from that string
     // If it's the default language, pass the locale for that
     const lang = isDefault ? defaultKey : name.split(`.`)[1]
 
-    // All files for a blogpost are stored in a folder
-    // Spliting the absolute path to get the name of the folder
-    // to save on GraphQl as slug
-    const absolutePath = path.parse(node.fileAbsolutePath).dir.split('/')
-    const slug = absolutePath[ absolutePath.length - 1 ].slice(11)
+    // The file name without date and lang type to save on GraphQl as slug 
+    const slug = (name.split(`.`)[1] === undefined ? name : name.split(`.`)[0]).slice(11)
 
+    // Adding the nodes on GraphQL for each post as "fields"
     createNodeField({ node, name: `slug`, value: slug })
     createNodeField({ node, name: `locale`, value: lang })
     createNodeField({ node, name: `isDefault`, value: isDefault })
