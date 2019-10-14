@@ -7,7 +7,7 @@ A simple but feature rich starter boilerplate for creating a multi-language Gats
 - General translations for any content
 - Styled Components to styles
 - All important seetings for speedy and optimized images
-- Blog Posts list
+- Blog Posts list with pagination
 - Focus on SEO and PWA
 
 ## Important notes:
