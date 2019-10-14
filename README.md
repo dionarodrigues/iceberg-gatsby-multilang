@@ -1,8 +1,16 @@
 # Gatsby Project with Multiple Languages
 
-This project demonstrates how to create a multi-language Gatsby website (Internationalization / i18n) without third party plugins or packages and also focused on SEO. 
+A simple but feature rich starter boilerplate for creating a multi-language Gatsby website (Internationalization / i18n) without third party plugins or packages and also focused on SEO. This starter also contains other main Gatsby configurations you might need.
 
-Important notes:
+- Translations by using GraphQL, hooks and context API
+- Content in markdown for diferent languages 
+- General translations for any content
+- Styled Components to styles
+- All important seetings for speedy and optimized images
+- Blog Posts list
+- Focus on SEO and PWA
+
+## Important notes:
 
 - General information are defined in `config/i18n.js`.
 - The translations are located in `config/translations` and the `useTranslations` custom hook pulls these translations (via GraphQL query) and inserts them into the pages.
