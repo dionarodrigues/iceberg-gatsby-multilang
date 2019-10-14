@@ -20,4 +20,4 @@ A simple but feature rich starter boilerplate for creating a multi-language Gats
 
 --- 
 
-This project started based on [this solution](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-i18n), but I started creating a lots of other needs basead on my projects. Feel free to use this solution as well.
+This project started based on [this solution](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-i18n), but I started creating other solutions based on my projects. Feel free to use this solution as well.
