@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: `http://localhost:8000`,
   },
   plugins: [
+    `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-json`, 
     `gatsby-transformer-sharp`, 

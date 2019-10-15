@@ -1,0 +1,46 @@
+backend:
+  name: github
+  repo: diogorodrigues/iceberg-gatsby-multilang
+  branch: master
+  site_domain: https://iceberg-gatsby-multilang.netlify.com/
+
+publish_mode: editorial_workflow
+media_folder: "static/assets/img"
+public_folder: "assets/img"
+
+collections:
+  - name: "posts" # Used in routes, e.g., /admin/collections/blog
+    label: "Posts" # Used in the UI
+    folder: "blog" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - {
+          label: "Date",
+          name: "date",
+          widget: "datetime",
+          format: "YYYY-MM-DD hh:mm:ss",
+        }
+      - { label: "image", name: "thumbnail", widget: "image" }
+      - {
+        label: "Category",
+        name: "category",
+        widget: "select",
+        options: ["Markdown", "Javascript", "Images", "Gatsby", "Imagens", "Others", "Outros"]
+      }
+      - {
+        label: "Background",
+        name: "background",
+        widget: "select",
+        options: [
+          { label: "Gray", value: "#353b48" },
+          { label: 'Yellow', value: '#e58e26' },
+          { label: 'Green', value: '#079992' },
+          { label: 'Purple', value: '#7d4cdb' },
+          { label: 'Red', value: '#e74c3c' },
+          { label: 'Silver', value: '#bdc3c7' },
+        ]
+      }
+      - { label: "Body", name: "body", widget: "markdown" }
