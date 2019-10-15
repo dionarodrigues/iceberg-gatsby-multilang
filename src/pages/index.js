@@ -30,7 +30,7 @@ const Index = ({ data: { allMarkdownRemark } }) => {
         ))}
       </ul>
       <br />
-      <LocalizedLink to={`/posts/`}>
+      <LocalizedLink to={`/blog/`}>
         {allPosts}
       </LocalizedLink>
     </>
@@ -42,7 +42,10 @@ export default Index
 export const query = graphql`
   query Index($locale: String!, $dateFormat: String!, ) {
     allMarkdownRemark(
-      filter: { fields: { locale: { eq: $locale } } }
+      filter: { 
+        fields: { locale: { eq: $locale } } 
+        fileAbsolutePath: {regex: "/(blog)\/.*\\.md$/"}
+      }
       sort: { fields: [frontmatter___date], order: DESC }
       limit: 3
     ) {

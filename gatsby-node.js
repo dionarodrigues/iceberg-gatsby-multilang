@@ -62,13 +62,14 @@ exports.onCreateNode = ({ node, actions }) => {
     const defaultKey = findKey(locales, o => o.default === true)
 
     // Files are defined with "name-with-dashes.lang.md"
-    // "name" returns "name-with-dashes.lang"
     // So grab the lang from that string
     // If it's the default language, pass the locale for that
     const lang = isDefault ? defaultKey : name.split(`.`)[1]
 
-    // The file name without date and lang type to save on GraphQl as slug 
-    const slug = (name.split(`.`)[1] === undefined ? name : name.split(`.`)[0]).slice(11)
+    // Get the entire file name and remove the lang of it if the name contains the lang abbreviation
+    const slugFileName = name.split(`.`)[1] === undefined ? name : name.split(`.`)[0]
+    // Than remove the date if the name has the date info
+    const slug = slugFileName.length >= 10 ? slugFileName.slice(11) : slugFileName
 
     // Adding the nodes on GraphQL for each post as "fields"
     createNodeField({ node, name: `slug`, value: slug })
@@ -83,11 +84,11 @@ exports.createPages = async ({ graphql, actions }) => {
   // Templates for Posts List and Single post
   const postTemplate = path.resolve(`./src/templates/post.js`)
   const postsListTemplate = path.resolve(`./src/templates/posts-list.js`)
+  const pageTemplate = path.resolve(`./src/templates/page.js`)
 
   const result = await graphql(`
     {
       blog: allMarkdownRemark(
-        filter: { fileAbsolutePath: {regex: "/(blog)/.*\\\\.md$/"} }
         sort: { fields: [frontmatter___date], order: DESC }
         ){
         edges {
@@ -99,6 +100,7 @@ exports.createPages = async ({ graphql, actions }) => {
             }
             frontmatter {
               title
+              page
             }
           }
         }
@@ -124,9 +126,15 @@ exports.createPages = async ({ graphql, actions }) => {
     const locale = post.fields.locale
     const isDefault = post.fields.isDefault
 
+    // Check if it's page (to differentiate post and page)
+    const isPage = post.frontmatter.page
+
+    // Setting a template for page or post depending on the content
+    const template = isPage ? pageTemplate : postTemplate
+
     createPage({
-      path: localizedSlug({ isDefault, locale, slug }),
-      component: postTemplate,
+      path: localizedSlug({ isDefault, locale, slug, isPage }),
+      component: template,
       context: {
         // Pass both the "title" and "locale" to find a unique file
         // Only the title would not have been sufficient as articles could have the same title
@@ -137,20 +145,20 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  // Crating Pagination
+  // Creating Posts List and its Pagination
   const postsPerPage = 6
   const langs = Object.keys(locales).length
-  const numPages = Math.ceil((postList.length/langs) / postsPerPage)   
+  const numPages = Math.ceil((postList.length / langs) / postsPerPage)
 
   Object.keys(locales).map(lang => {
 
     // Use the values defined in "locales" to construct the path
     const localizedPath = locales[lang].default
-      ? '/posts'
-      : `${locales[lang].path}/posts`     
+      ? '/blog'
+      : `${locales[lang].path}/blog`
 
     return Array.from({ length: numPages }).forEach((_, index) => {
-      
+
       createPage({
         path: index === 0 ? `${localizedPath}` : `${localizedPath}/page/${index + 1}`,
         component: postsListTemplate,
@@ -161,11 +169,11 @@ exports.createPages = async ({ graphql, actions }) => {
           currentPage: index + 1,
           locale: lang,
           dateFormat: locales[lang].dateFormat,
-        }, 
+        },
       })
 
     })
-    
+
   })
 
 }

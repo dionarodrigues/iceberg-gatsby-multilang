@@ -24,6 +24,13 @@ module.exports = {
         path: `${__dirname}/config/translations`,
         name: `translations`,
       },
+    }, 
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/config/menu`,
+        name: `menu`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -37,6 +44,13 @@ module.exports = {
       options: {
         path: `${__dirname}/blog`,
         name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/pages`,
+        name: `pages`,
       },
     },    
     {

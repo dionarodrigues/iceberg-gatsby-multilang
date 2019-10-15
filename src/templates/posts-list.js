@@ -50,7 +50,10 @@ export const query = graphql`
   query PostsList($locale: String!, $dateFormat: String!, $skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       sort: {fields: frontmatter___date, order: DESC}, 
-      filter: {fields: {locale: {eq: $locale}}, fileAbsolutePath: {regex: "/(blog)/.*\\\\.md$/"}}
+      filter: { 
+        fields: { locale: { eq: $locale } } 
+        fileAbsolutePath: {regex: "/(blog)\/.*\\.md$/"}
+      }
       limit: $limit
       skip: $skip
     ){

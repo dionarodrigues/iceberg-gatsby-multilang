@@ -1,0 +1,6 @@
+{
+  "menuItems": [
+    { "name": "Sobre", "link": "/sobre-mim" },
+    { "name": "Contato", "link": "/contato" }
+  ]
+}
