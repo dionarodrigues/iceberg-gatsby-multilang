@@ -31,15 +31,18 @@ const query = graphql`
         node {
           name
           translations: childTranslationsJson {
-            homepage
-            about
-            posts
-            category
+            home
+            
             hello
             subline
-            backToHome
             latestPosts
+            category
             allPosts
+            
+            aboutProject
+            seeMorePWA
+            maintainedBy
+            contributeMessage
           }
         }
       }

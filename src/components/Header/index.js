@@ -7,13 +7,13 @@ import Logo from "../Logo"
 import * as S from './styled'
 
 const Header = () => {
-  const { backToHome } = useTranslations()
+  const { home } = useTranslations()
 
   return (
     <S.HeaderWrapper>
       <S.Container>        
       
-        <S.LogoLink to="/" aria-label={backToHome}>
+        <S.LogoLink to="/" title={home} aria-label={home}>
           <Logo />
         </S.LogoLink>
 

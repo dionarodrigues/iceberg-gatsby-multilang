@@ -113,10 +113,15 @@ exports.createPages = async ({ graphql, actions }) => {
     return
   }
 
-  const postList = result.data.blog.edges
+  // Posts and Pages created by markdown (blog and pages directory)
+  const contentMarkdown = result.data.blog.edges
+
+  // Total of posts (only posts, no pages)
+  // It will be increase by the next loop
+  let postsTotal = 0
 
   // Creating each post
-  postList.forEach(({ node: post }) => {
+  contentMarkdown.forEach(({ node: post }) => {
 
     // Getting Slug and Title
     const slug = post.fields.slug
@@ -132,6 +137,9 @@ exports.createPages = async ({ graphql, actions }) => {
     // Setting a template for page or post depending on the content
     const template = isPage ? pageTemplate : postTemplate
 
+    // Count posts
+    postsTotal = isPage ? postsTotal + 0 : postsTotal + 1
+
     createPage({
       path: localizedSlug({ isDefault, locale, slug, isPage }),
       component: template,
@@ -146,9 +154,9 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
   // Creating Posts List and its Pagination
-  const postsPerPage = 6
+  const postsPerPage = 4
   const langs = Object.keys(locales).length
-  const numPages = Math.ceil((postList.length / langs) / postsPerPage)
+  const numPages = Math.ceil((postsTotal / langs) / postsPerPage)
 
   Object.keys(locales).map(lang => {
 

@@ -1,11 +1,14 @@
 {
-  "homepage": "Página Inicial",
-  "about": "Sobre mim",
-  "posts": "Artigos",
-  "category": "Categoria",  
+  "home": "Início",
+
   "hello": "Olá e bem-vindo à esse exemplo de site usando i18n!",
   "subline": "Aqui você pode ler alguns dos artigos bacanas que eu encontrei na internet! :)",
-  "backToHome": "Voltar para a home",
   "latestPosts": "Útimos posts",
-  "allPosts": "Todos os Posts"
+  "category": "Categoria",
+  "allPosts": "Todos os Posts",  
+
+  "aboutProject": "Iceberg Gatsby é um PWA, salve o site em sua homescreen para vê-lo offline.",
+  "seeMorePWA": "Leia mais sobre PWA aqui",
+  "maintainedBy": "Projeto mantido por",
+  "contributeMessage": "Você sempre poderá contribuir com esse projeto no"
 }

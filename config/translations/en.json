@@ -1,11 +1,14 @@
-{  
-  "homepage": "Home",
-  "about": "About me",
-  "posts": "Posts",
-  "category": "Category",
+{ 
+  "home": "Home",
+
   "hello": "Hello and welcome to this i18n example site!",
   "subline": "You can read some of cool articles I found on the internet! :)",
-  "backToHome": "Back to home",
   "latestPosts": "Latest posts",
-  "allPosts": "All Posts"
+  "category": "Category", 
+  "allPosts": "All Posts",
+
+  "aboutProject": "Iceberg Gatsby is a PWA, save it for offline reading.",
+  "seeMorePWA": "See more PWA here",
+  "maintainedBy": "Maintained by",
+  "contributeMessage": "You can always contribute with the project on"
 }

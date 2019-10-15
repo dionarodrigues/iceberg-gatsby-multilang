@@ -1,11 +1,8 @@
 import React from "react"
-import useTranslations from "../useTranslations"
 
 import * as S from './styled'
 
 const Languages = () => {
-  const { backToHome, homepage, about, posts } = useTranslations()
-
   return (
     <S.LanguageWrapper> 
       <S.LanguageItem>
