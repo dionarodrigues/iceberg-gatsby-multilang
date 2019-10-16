@@ -53,21 +53,20 @@ exports.onCreateNode = ({ node, actions }) => {
     // It will return the file name without '.md' string (e.g. "file-name" or "file-name.lang")
     const name = path.basename(node.fileAbsolutePath, `.md`)
 
-    // Check if file.name has lang type. If "undefined" it means the file is the default language
-    // (e.g. name.split(`.`)[1] => "file-name" returns "undefined", but "file-name.lang" returns "lang")
-    // (in this case the default language is for files set with "en")
-    const isDefault = name.split(`.`)[1] === undefined
-
     // Find the key that has "default: true" set (in this case it returns "en")
     const defaultKey = findKey(locales, o => o.default === true)
+
+    // Check if file.name.lang has the default lang type. 
+    // (in this case the default language is for files set with "en")
+    const isDefault = name.split(`.`)[1] === defaultKey    
 
     // Files are defined with "name-with-dashes.lang.md"
     // So grab the lang from that string
     // If it's the default language, pass the locale for that
     const lang = isDefault ? defaultKey : name.split(`.`)[1]
 
-    // Get the entire file name and remove the lang of it if the name contains the lang abbreviation
-    const slugFileName = name.split(`.`)[1] === undefined ? name : name.split(`.`)[0]
+    // Get the entire file name and remove the lang of it
+    const slugFileName = name.split(`.`)[0]
     // Than remove the date if the name has the date info
     const slug = slugFileName.length >= 10 ? slugFileName.slice(11) : slugFileName
 
