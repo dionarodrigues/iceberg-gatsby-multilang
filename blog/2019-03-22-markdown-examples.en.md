@@ -3,7 +3,7 @@ title: 'Markdown Examples'
 date: 2019-03-22 01:21:23
 description: Markdown is intended to be as easy-to-read and easy-to-write as is feasible.
 category: Markdown
-background: #353b48
+background: '#353b48'
 ---
 
 Markdown is intended to be as easy-to-read and easy-to-write as is feasible.

@@ -3,7 +3,7 @@ title: 'Processamento digital de imagens'
 date: 2019-04-01 07:41:34
 description: Na ciência da computação, o processamento de imagem digital é o uso de algoritmos de computador para executar o processamento de imagens em imagens digitais.
 category: Images
-background: #079992
+background: '#079992'
 image: "/assets/img/01.jpg"
 ---
 

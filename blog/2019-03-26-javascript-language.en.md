@@ -3,7 +3,7 @@ title: 'Javascript Language - Code examples using PrismJS'
 date: 2019-03-26 11:21:56
 description: JavaScript, often abbreviated as JS, is a high-level, interpreted scripting language that conforms to the ECMAScript specification.
 category: Javascript
-background: #e58e26
+background: '#e58e26'
 image: "/assets/img/05.jpg"
 ---
 
