@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components"
+import media from "styled-media-query"
 
 const GlobalStyles = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/
@@ -30,6 +31,9 @@ const GlobalStyles = createGlobalStyle`
   footer, header, hgroup, menu, nav, section {
     display: block;
   }
+  html {
+    font-size: 62.5%;
+  }
   body {
     line-height: 1;
   }
@@ -52,23 +56,57 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    background: #fff;
-    line-height: 1;
-    font-size: 100%;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background: var(--body-bg);
+    font-weight: 400;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+    font-size: 1.5rem;
+    line-height: 160%;
+    ${media.greaterThan("large")`
+      font-size: 1.7rem;
+    `}
   }
   img {
     display: block;
-  	width: 100%;
+  	max-width: 100%;
   	height: auto;
   }
 
   a {
-    color: var(--mainColor)
+    color: var(--primaryColor)
   }
 
-  body {
-    --mainColor: #7d4cdb;
+  :root { 
+    --gray-extra-light: #eaeaea; 
+    --gray-light: #747d8d;  
+    --gray: #475060;
+    --gray-dark: #2e333e;
+
+    --primary-color: #0066f9;
+    --secondary-color: #2e333e;
+    --thirdy-color: #001ff9;
+
+    --body-bg: #FFFFFF; 
+
+    --bg-light: var(--gray-extra-light);
+    --bg-dark: var(--gray-dark);
+
+    --border-light: var(--gray-light);
+    --border-dark: var(--gray-dark);
+    
+    --link-color: var(--primary-color);
+    --link-color-hover: var(--thirdy-color);
+
+    --text-color: var(--gray);
+    --text-light:var(--gray-light);
+    --text-dark: var(--gray-dark);
+
+    --width-container: 1040px;
+
+    --space: 2rem;
+    --space-sm: 1rem;
+    --space-lg: 3rem;
+
   }
 `
 export default GlobalStyles

@@ -38,6 +38,13 @@ const query = graphql`
             latestPosts
             category
             allPosts
+            toRead
+
+            next
+            prev
+            of
+
+            button
             
             aboutProject
             seeMorePWA

@@ -13,6 +13,6 @@ export const SocialLinksItem = styled.li`
 export const SocialLinksLink = styled(Link)`
   display: block;
   width: 50px;
-  color: var(--mainColor);
+  color: var(--primary-color);
 `
 

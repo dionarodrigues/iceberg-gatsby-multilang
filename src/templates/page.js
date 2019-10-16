@@ -1,8 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
+import PageTitle from "../components/PageTitle"
 import SEO from "../components/seo"
 
-import * as S from "../components/Post/styled" 
+import * as S from "../components/Content/styled" 
 
 // The normal <a> tag is modified here (so that internal links use gatsby-link/LocalizedLink
 // More info:
@@ -17,10 +18,10 @@ const Page = props => {
         description={post.frontmatter.description} 
         image={post.frontmatter.image} 
       />
-      <S.PostTitle>{post.frontmatter.title}</S.PostTitle>
-      <S.MainContent>        
+      <PageTitle text={post.frontmatter.title} />
+      <S.Content>        
         <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
-      </S.MainContent>
+      </S.Content>
     </>
   )
 }

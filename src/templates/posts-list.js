@@ -1,9 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
-import LocalizedLink from "../components/LocalizedLink"
+import PostItem from "../components/PostItem"
+import PageTitle from "../components/PageTitle"
 import SEO from "../components/seo"
 
 import Pagination from "../components/Pagination"
+
+import * as S from "../components/ListWrapper/styled"
 
 const Blog = props => {
   const postList = props.data.allMarkdownRemark.edges
@@ -18,21 +21,30 @@ const Blog = props => {
   return (
     <>
       <SEO title="Blog" />
-      <h1>Blog</h1>
-      <hr style={{ margin: `2rem 0` }} />
-      <ul className="post-list">
-        {postList.map(({ node: post }) => (
-          <li key={`${post.frontmatter.title}-${post.fields.locale}`}>
-            <LocalizedLink to={`/blog/${post.fields.slug}`}>
-              {post.frontmatter.title}
-              < br />
-              <small>{post.frontmatter.description}</small>
-            </LocalizedLink>
-            <div>{post.frontmatter.date}</div>
-            <br />
-          </li>
-        ))}
-      </ul>
+      <PageTitle text="Blog Posts" />
+      
+      <S.ListWrapper>
+        {postList.map(
+          ({
+            node: {
+              frontmatter: { background, category, date, description, title, image },
+              timeToRead,
+              fields: { slug },
+            },
+          }) => (
+            <PostItem
+              slug={`/blog/${slug}`}
+              background={background}
+              category={category}
+              date={date}
+              timeToRead={timeToRead}
+              title={title}
+              description={description}
+              image={image}
+            />
+          )
+        )}
+      </S.ListWrapper>
       
       <Pagination
         isFirst={isFirst}
@@ -61,10 +73,14 @@ export const query = graphql`
         node {
           frontmatter {
             title
-            category
             description
+            category
+            background
+            image
             date(formatString: $dateFormat)
+
           }
+          timeToRead
           fields {
             locale
             slug

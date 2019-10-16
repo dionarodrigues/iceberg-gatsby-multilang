@@ -14,15 +14,15 @@ const LocaleContext = React.createContext()
 const Layout = ({ children, pageContext: { locale } }) => (
   <LocaleContext.Provider value={{ locale }}>
     <GlobalStyles />
-    <div className="site-wrapper">
+    <S.Wrapper>
       <Header />
-      <main role="main" className="site-content">
+      <S.SiteContent role="main">
         <S.Container>
           {children}
         </S.Container>
-      </main>
+      </S.SiteContent>
       <Footer />
-    </div>
+    </S.Wrapper>
   </LocaleContext.Provider>
 )
 

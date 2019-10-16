@@ -17,13 +17,13 @@ const Header = () => {
           <Logo />
         </S.LogoLink>
 
-        <S.NavMenu>
-          <Navigation />
-        </S.NavMenu>
-
         <S.NavLanguages>
           <Languages />
-        </S.NavLanguages>   
+        </S.NavLanguages>  
+
+        <S.NavMenu>
+          <Navigation />
+        </S.NavMenu>         
 
       </S.Container>   
     </S.HeaderWrapper>

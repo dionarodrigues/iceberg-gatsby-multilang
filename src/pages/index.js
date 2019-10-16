@@ -1,42 +1,59 @@
 import React from "react"
 import { graphql } from "gatsby"
 import SEO from "../components/seo"
+import PostItem from "../components/PostItem"
+import PageTitle from "../components/PageTitle"
 import LocalizedLink from "../components/LocalizedLink"
 import useTranslations from "../components/useTranslations"
+
+import * as S from "../components/ListWrapper/styled"
 
 const Index = ({ data: { allMarkdownRemark } }) => {
   // useTranslations is aware of the global context (and therefore also "locale")
   // so it'll automatically give back the right translations
   const { hello, subline, category, latestPosts, allPosts } = useTranslations()
 
+  const postList = allMarkdownRemark.edges;
+
   return (
-    <>
+    <div className="homepage">
       <SEO title="Home" />
-      <h1>{hello}</h1>
+      <PageTitle text={hello} />
       <p>{subline}</p>
       <hr style={{ margin: `2rem 0` }} />
       <h2><strong>{latestPosts}</strong></h2>
 
       <br />
 
-      <ul className="post-list">
-        {allMarkdownRemark.edges.map(({ node: post }) => (
-          <li key={`${post.frontmatter.title}-${post.fields.locale}`}>
-            <LocalizedLink to={`/blog/${post.fields.slug}`}>
-              {post.frontmatter.title}              
-            </LocalizedLink>
-            <br />
-            <small>{category}: {post.frontmatter.category}</small>
-            <div>{post.frontmatter.date}</div>
-            <br />
-          </li>
-        ))}
-      </ul>
+      <S.ListWrapper>
+        {postList.map(
+          ({
+            node: {
+              frontmatter: { background, category, date, description, title, image },
+              timeToRead,
+              fields: { slug },
+            },
+          }) => (
+              <PostItem
+                slug={`/blog/${slug}`}
+                background={background}
+                category={category}
+                date={date}
+                timeToRead={timeToRead}
+                title={title}
+                description={description}
+                image={image}
+              />
+            )
+        )}
+      </S.ListWrapper>
+
       <br />
+
       <LocalizedLink to={`/blog/`}>
         {allPosts}
       </LocalizedLink>
-    </>
+    </div>
   )
 }
 
@@ -58,17 +75,15 @@ export const query = graphql`
             title
             description
             category
+            background
+            image
             date(formatString: $dateFormat)
+
           }
-          excerpt
+          timeToRead
           fields {
             locale
             slug
-          }
-          parent {
-            ... on File {
-              relativeDirectory
-            }
           }
         }
       }

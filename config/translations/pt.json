@@ -6,6 +6,13 @@
   "latestPosts": "Útimos posts",
   "category": "Categoria",
   "allPosts": "Todos os Posts",  
+  "toRead": "de leitura",
+
+  "next": "Próximo",
+  "prev": "Anterior",
+  "of": "de",
+
+  "button": "Botão",
 
   "aboutProject": "Iceberg Gatsby é um PWA, salve o site em sua homescreen para vê-lo offline.",
   "seeMorePWA": "Leia mais sobre PWA aqui",

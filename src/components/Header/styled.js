@@ -1,33 +1,34 @@
 import styled from "styled-components"
+import media from "styled-media-query"
 import LocalizedLink from "../LocalizedLink"
 
 export const HeaderWrapper = styled.div`
-  background: red;
   margin-bottom: 30px;
-  min-height: 4rem;
-  background-color: var(--mainColor);
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);  
-  color: #fff;
+  background-color: var(--bg-light);  
 `
 
 export const Container = styled.div`
   display: flex;
-  max-width: 940px;
+  max-width: var(--width-container);
   margin: 0 auto;
   justify-content: flex-start;
   align-items: center;
-  padding: 0 30px;
+  padding: calc(var(--space)*1.3) var(--space);
+  ${media.greaterThan("large")`
+    padding: calc(var(--space)*1.3) var(--space-sm);
+  `}
 `
 
 export const LogoLink = styled(LocalizedLink)`
   display: inline-block;
   margin-right: .5rem;
+  width: 170px;
 `
 
 export const NavMenu = styled.div`
-  
+  margin-left: auto;
 `
 
 export const NavLanguages = styled.div`
-  margin-left: auto;
+  margin-left: var(--space);
 `

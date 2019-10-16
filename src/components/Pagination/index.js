@@ -1,6 +1,9 @@
 import React from "react"
 import propTypes from "prop-types"
 import LocalizedLink from "../LocalizedLink"
+import useTranslations from "../useTranslations"
+
+import * as S from './styled'
 
 const Pagination = ({
   isFirst,
@@ -11,20 +14,24 @@ const Pagination = ({
   nextPage,
 }) => {
 
+  const { next, prev, of } = useTranslations()  
+
   return(
-    <ul className="pagination">
+    <S.PaginationWrapper>
       <li>
       {!isFirst && <LocalizedLink to={prevPage}>
-          ← Prev
+          ← {prev}
         </LocalizedLink> }
       </li>
-      {currentPage} de {numPages}
+      <p>
+        {currentPage} {of} {numPages}
+      </p>
       <li>
         {!isLast && <LocalizedLink to={nextPage}>
-          Next →
+          {next} →
         </LocalizedLink> }
       </li>
-    </ul>
+    </S.PaginationWrapper>
   )
 }
 

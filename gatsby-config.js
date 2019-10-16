@@ -67,12 +67,23 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 960,
+              maxWidth: 1040,
               linkImagesToOriginal: false
             }
           },
           `gatsby-remark-lazy-load`,
           `gatsby-remark-prismjs` // It needs to be the last one
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Open Sans`,
+            variants: [`400`, `600`]
+          },
         ],
       },
     },

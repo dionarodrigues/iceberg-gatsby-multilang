@@ -6,12 +6,12 @@ export const LanguageWrapper = styled.ul`
 `
 
 export const LanguageItem = styled.li`
-  
+  margin-left: var(--space-sm);
 `
 
 export const LanguageLink = styled(Link)`
   display: inline-block;
   margin-right: .5rem;
-  color: #cbbde2;
-  font-size: .9rem;
+  color: var(--grayColor);
+  font-size: 1.4rem;
 `
