@@ -1,6 +1,6 @@
 ---
 title: 'Linguagem JavaScript - Exemplos de códigos usando PrismJS'
-date: 2019-03-26 11:21:56
+date: '2019-03-26 11:21:56' 
 description: JavaScript, frequentemente abreviado como JS, é uma linguagem de script interpretada de alto nível que está em conformidade com a especificação ECMAScript.
 category: Javascript
 background: '#e58e26'

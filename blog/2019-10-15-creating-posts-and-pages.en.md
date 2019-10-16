@@ -1,6 +1,6 @@
 ---
 title: 'Creating posts and pages'
-date: 2019-20-15 07:41:34
+date: '2019-10-15 07:41:34'
 description: See how is super easy to add new posts and pages in this project
 category: Gatsby
 background: '#7d4cdb'

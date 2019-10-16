@@ -1,6 +1,6 @@
 ---
 title: 'Adding menu items'
-date: 2019-20-15 15:41:34
+date: '2019-10-15 15:41:34' 
 description: Add menu items in GraphQL to create a dynamic menu
 category: Gatsby
 background: '#7d4cdb'

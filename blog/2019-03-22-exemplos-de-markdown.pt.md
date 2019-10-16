@@ -1,6 +1,6 @@
 ---
 title: 'Exemplos de Markdown'
-date: 2019-03-22 01:21:23
+date: '2019-03-22 01:21:23'
 description: O Markdown deve ser o mais fácil de ler e escrever o mais possível.
 category: Markdown
 background: '#353b48'

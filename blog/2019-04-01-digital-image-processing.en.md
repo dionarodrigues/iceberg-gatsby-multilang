@@ -1,6 +1,6 @@
 ---
 title: 'Digital image processing'
-date: 2019-04-01 07:41:34
+date: '2019-04-01 07:41:34' 
 description: In computer science, digital image processing is the use of computer algorithms to perform image processing on digital images.
 category: Images
 background: '#079992'
