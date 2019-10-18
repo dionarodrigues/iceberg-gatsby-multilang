@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { Link } from "gatsby"
 
 export const SocialLinksList = styled.ul`
   display: flex;
@@ -10,7 +9,7 @@ export const SocialLinksItem = styled.li`
   margin-right: 1rem;
 `
 
-export const SocialLinksLink = styled(Link)`
+export const SocialLinksLink = styled.a`
   display: block;
   width: 50px;
   color: var(--primary-color);

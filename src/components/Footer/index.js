@@ -17,7 +17,7 @@ const Footer = () => {
       <S.FooterContainer>
           <SocialLinks />
             <p>{aboutProject} <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps" target="_blank">{seeMorePWA}</a>.</p>
-            <p>{maintainedBy} <a href="https://twitter.com/_diogorodrigues">@_diogorodrigues</a>. {contributeMessage} <a href="https://github.com/diogorodrigues/iceberg-gatsby-multilang" target="_blank">Github</a>.</p>
+            <p>{maintainedBy} <a href="https://twitter.com/_diogorodrigues" target="_blank">@_diogorodrigues</a>. {contributeMessage} <a href="https://github.com/diogorodrigues/iceberg-gatsby-multilang" target="_blank">Github</a>.</p>
       </S.FooterContainer>
     </S.FooterWrapper>
   )
