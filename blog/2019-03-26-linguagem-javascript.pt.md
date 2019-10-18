@@ -1,20 +1,22 @@
 ---
 title: 'Linguagem JavaScript - Exemplos de códigos usando PrismJS'
-date: '2019-03-26 11:21:56' 
+date: '2019-03-26 11:21:56'
 description: JavaScript, frequentemente abreviado como JS, é uma linguagem de script interpretada de alto nível que está em conformidade com a especificação ECMAScript.
 category: Javascript
 background: '#e58e26'
-image: "/assets/img/05.jpg"
+image: '/assets/img/05.jpg'
 ---
 
 JavaScript (/ ˈdʒɑːvəˌskrɪpt /), geralmente abreviado como JS, é uma linguagem de script interpretada de alto nível que está em conformidade com a especificação ECMAScript. O JavaScript possui sintaxe entre colchetes, digitação dinâmica, orientação a objetos com base em protótipo e funções de primeira classe.
 
 Hello World:
+
 ```JS
 console.log("Hello World!");
 ```
 
-A simple recursive function: 
+A simple recursive function:
+
 ```JS
 function factorial(n) {
     if (n === 0)
@@ -36,7 +38,7 @@ function LCMCalculator(x, y) { // constructor function
 
         return x;
     };
-    
+
     this.a = checkInt(x)
     //   semicolons   ^^^^  are optional, a newline is enough
     this.b = checkInt(y);
@@ -78,7 +80,7 @@ LCMCalculator.prototype = { // object literal
         // Variable names do not collide with object properties, e.g., |lcm| is not |this.lcm|.
         // not using |this.a*this.b| to avoid FP precision issues
         let lcm = this.a / this.gcd() * this.b;
-        
+
         // Only need to calculate lcm once, so "redefine" this method.
         this.lcm = function() {
             return lcm;

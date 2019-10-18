@@ -12,7 +12,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 [I'm an inline-style link with title](https://www.google.com "Google's Homepage")
 
-[I'm a reference-style link][Arbitrary case-insensitive reference text]
+[I'm a reference-style link][arbitrary case-insensitive reference text]
 
 [I'm a relative reference to a repository file](../blob/master/LICENSE)
 
@@ -20,8 +20,8 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 Or leave it empty and use the [link text itself].
 
-URLs and URLs in angle brackets will automatically get turned into links. 
-http://www.example.com or <http://www.example.com> and sometimes 
+URLs and URLs in angle brackets will automatically get turned into links.
+http://www.example.com or <http://www.example.com> and sometimes
 example.com (but not on Github, for example).
 
 Some text to show that the reference links can follow later.
@@ -35,20 +35,19 @@ Some text to show that the reference links can follow later.
 It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
 
 ```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
+var s = 'JavaScript syntax highlighting'
+alert(s)
 ```
- 
+
 ```python
 s = "Python syntax highlighting"
 print s
 ```
- 
+
 ```
-No language indicated, so no syntax highlighting. 
+No language indicated, so no syntax highlighting.
 But let's throw in a <b>tag</b>.
 ```
-
 
 ### Where does it come from?
 
@@ -56,20 +55,20 @@ Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots 
 
 Colons can be used to align columns.
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| Tables        |      Are      |   Cool |
+| ------------- | :-----------: | -----: |
+| col 3 is      | right-aligned | \$1600 |
+| col 2 is      |   centered    |   \$12 |
+| zebra stripes |   are neat    |    \$1 |
 
 There must be at least 3 dashes separating each header cell.
-The outer pipes (|) are optional, and you don't need to make the 
+The outer pipes (|) are optional, and you don't need to make the
 raw Markdown line up prettily. You can also use inline Markdown.
 
-Markdown | Less | Pretty
---- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
+| Markdown | Less      | Pretty     |
+| -------- | --------- | ---------- |
+| _Still_  | `renders` | **nicely** |
+| 1        | 2         | 3          |
 
 The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
 
@@ -78,7 +77,7 @@ The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for t
 
 Quote break.
 
-> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote. 
+> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can _put_ **Markdown** into a blockquote.
 
 ### Where can I get some?
 
@@ -92,10 +91,10 @@ Three or more...
 
 Hyphens
 
-***
+---
 
 Asterisks
 
-___
+---
 
 Underscores

@@ -4,14 +4,14 @@ date: '2019-10-15 07:41:34'
 description: See how is super easy to add new posts and pages in this project
 category: Gatsby
 background: '#7d4cdb'
-image: "/assets/img/06.jpg"
+image: '/assets/img/06.jpg'
 ---
 
-## Adding new content 
+## Adding new content
 
-All you need to do is creating new markdown files. 
+All you need to do is creating new markdown files.
 
-Blogposts are defined in `blog` directory and pages are defined in `page` directory. 
+Blogposts are defined in `blog` directory and pages are defined in `page` directory.
 
 ## Understanding the slug
 

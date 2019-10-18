@@ -4,17 +4,19 @@ date: '2019-03-26 11:21:56'
 description: JavaScript, often abbreviated as JS, is a high-level, interpreted scripting language that conforms to the ECMAScript specification.
 category: Javascript
 background: '#e58e26'
-image: "/assets/img/05.jpg"
+image: '/assets/img/05.jpg'
 ---
 
 JavaScript (/ˈdʒɑːvəˌskrɪpt/), often abbreviated as JS, is a high-level, interpreted scripting language that conforms to the ECMAScript specification. JavaScript has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions.
 
 Hello World:
+
 ```JS
 console.log("Hello World!");
 ```
 
-A simple recursive function: 
+A simple recursive function:
+
 ```JS
 function factorial(n) {
     if (n === 0)
@@ -36,7 +38,7 @@ function LCMCalculator(x, y) { // constructor function
 
         return x;
     };
-    
+
     this.a = checkInt(x)
     //   semicolons   ^^^^  are optional, a newline is enough
     this.b = checkInt(y);
@@ -78,7 +80,7 @@ LCMCalculator.prototype = { // object literal
         // Variable names do not collide with object properties, e.g., |lcm| is not |this.lcm|.
         // not using |this.a*this.b| to avoid FP precision issues
         let lcm = this.a / this.gcd() * this.b;
-        
+
         // Only need to calculate lcm once, so "redefine" this method.
         this.lcm = function() {
             return lcm;
