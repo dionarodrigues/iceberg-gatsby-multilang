@@ -1,8 +1,8 @@
 { 
   "home": "Home",
 
-  "hello": "Hello and welcome to this i18n example site!",
-  "subline": "A simple but feature rich starter boilerplate for creating a multi-language Gatsby website (Internationalization / i18n) without third party plugins or packages and also focused on SEO. This starter also contains other main Gatsby configurations you might need. :)",
+  "hello": "Gatsby multi-language starter",
+  "subline": "Internationalization / i18n without third party plugins or packages for Posts and Pages. Different URLs dependending on the language. Focused on SEO, PWA, Image Optimization, Styled Components and more. This starter is also integrate with Netlify CMS to manage all pages, posts and images.",
   "latestPosts": "Latest posts",
   "category": "Category", 
   "allPosts": "All Posts",
