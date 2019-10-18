@@ -13,6 +13,7 @@ export const Navigation = styled.nav`
   ${media.greaterThan("medium")`
     display: flex;
     flex-direction: row;
+    align-items: center;
   `} 
 `
 
@@ -40,7 +41,7 @@ export const NavigationLink = styled(LocalizedLink)`
       background: var(--primary-color);
       position: absolute;
       left: 0;
-      bottom: 0;
+      bottom: -10px;
       opacity: 0;
       transition: .3s ease-in-out;
     `} 
@@ -55,7 +56,7 @@ export const NavigationLink = styled(LocalizedLink)`
 
     &:after {
       opacity: 1;
-      bottom: 0;
+      bottom: -10px;
       width: 100%;
     }
   }
