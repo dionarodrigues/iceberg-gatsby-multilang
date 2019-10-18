@@ -21,7 +21,7 @@ const Blog = props => {
   return (
     <>
       <SEO title="Blog" />
-      <TitlePage text="Blog Posts" />
+      <TitlePage text="Blog" />
       
       <S.ListWrapper>
         {postList.map(
