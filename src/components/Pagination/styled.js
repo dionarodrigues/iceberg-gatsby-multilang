@@ -10,9 +10,9 @@ export const PaginationWrapper = styled.ul`
   justify-content: space-between;
   list-style: none;
   ${media.lessThan("large")`
-    font-size: .8rem;
     padding: 1rem;
   `}
+
   a {
     color: var(--texts);
     text-decoration: none;

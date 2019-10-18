@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import PageTitle from "../components/PageTitle"
+import TitlePage from "../components/TitlePage"
 import SEO from "../components/seo"
 
 import * as S from "../components/Content/styled" 
@@ -18,7 +18,7 @@ const Page = props => {
         description={post.frontmatter.description} 
         image={post.frontmatter.image} 
       />
-      <PageTitle text={post.frontmatter.title} />
+      <TitlePage text={post.frontmatter.title} />
       <S.Content>        
         <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
       </S.Content>

@@ -7,12 +7,12 @@ const Languages = () => {
     <S.LanguageWrapper> 
       <S.LanguageItem>
         <S.LanguageLink to="/" hrefLang="en">
-          English
+          en-US
         </S.LanguageLink>
       </S.LanguageItem> 
       <S.LanguageItem>
         <S.LanguageLink to="/pt" hrefLang="pt">
-          Português
+          pt-BR
         </S.LanguageLink>
       </S.LanguageItem>
     </S.LanguageWrapper>

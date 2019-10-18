@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import SEO from "../components/seo"
 import PostItem from "../components/PostItem"
-import PageTitle from "../components/PageTitle"
+import TitlePage from "../components/TitlePage"
 import LocalizedLink from "../components/LocalizedLink"
 import useTranslations from "../components/useTranslations"
 
@@ -18,7 +18,7 @@ const Index = ({ data: { allMarkdownRemark } }) => {
   return (
     <div className="homepage">
       <SEO title="Home" />
-      <PageTitle text={hello} />
+      <TitlePage text={hello} />
       <p>{subline}</p>
       <hr style={{ margin: `2rem 0` }} />
       <h2><strong>{latestPosts}</strong></h2>

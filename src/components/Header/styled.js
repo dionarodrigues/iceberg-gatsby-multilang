@@ -3,17 +3,24 @@ import media from "styled-media-query"
 import LocalizedLink from "../LocalizedLink"
 
 export const HeaderWrapper = styled.div`
-  margin-bottom: 30px;
-  background-color: var(--bg-light);  
+  background-color: var(--bg-light);
+  ${media.greaterThan("large")`
+    margin-bottom: var(--space);
+  `}  
 `
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: column;
   max-width: var(--width-container);
   margin: 0 auto;
   justify-content: flex-start;
   align-items: center;
   padding: calc(var(--space)*1.3) var(--space);
+  position: relative;
+  ${media.greaterThan("medium")`
+    flex-direction: row;
+  `} 
   ${media.greaterThan("large")`
     padding: calc(var(--space)*1.3) var(--space-sm);
   `}
@@ -26,7 +33,11 @@ export const LogoLink = styled(LocalizedLink)`
 `
 
 export const NavMenu = styled.div`
-  margin-left: auto;
+  width: 100%;
+  ${media.greaterThan("medium")`
+    margin-left: auto;
+    width: auto;
+  `} 
 `
 
 export const NavLanguages = styled.div`

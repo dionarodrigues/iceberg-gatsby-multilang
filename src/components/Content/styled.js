@@ -182,6 +182,14 @@ export const Content = styled.section`
     }
   }
 
+  ul {
+    list-style: disc;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
   dl {
     padding: 0;
 

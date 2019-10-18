@@ -2,7 +2,7 @@ import React from 'react'
 
 import * as S from './styled'
 
-const PageTitle = ( props ) => {
+const TitlePage = ( props ) => {
 
   const {text} = props
 
@@ -11,4 +11,4 @@ const PageTitle = ( props ) => {
   )
 }
 
-export default PageTitle
+export default TitlePage

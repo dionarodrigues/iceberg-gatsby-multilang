@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import PostItem from "../components/PostItem"
-import PageTitle from "../components/PageTitle"
+import TitlePage from "../components/TitlePage"
 import SEO from "../components/seo"
 
 import Pagination from "../components/Pagination"
@@ -21,7 +21,7 @@ const Blog = props => {
   return (
     <>
       <SEO title="Blog" />
-      <PageTitle text="Blog Posts" />
+      <TitlePage text="Blog Posts" />
       
       <S.ListWrapper>
         {postList.map(

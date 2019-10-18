@@ -5,6 +5,11 @@ import LocalizedLink from "../LocalizedLink"
 
 export const PostItemLink = styled(LocalizedLink)`
   text-decoration: none;
+  display: block;
+  margin-bottom: var(--space);
+  ${media.greaterThan("small")`
+    margin-bottom: 0;
+  `}
 `
 
 export const PostItemWrapper = styled.section`
