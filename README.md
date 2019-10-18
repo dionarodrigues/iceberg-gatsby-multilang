@@ -14,6 +14,10 @@ A simple but feature rich starter boilerplate for creating a multi-language Gats
 - Blog Posts list with pagination
 - Focus on SEO and PWA
 
+## About Netlify CMS
+
+You must change the Netlify data "repo" and "site_domain" according your Github repository in `static/admin/config.yml`.
+
 ## Important notes:
 
 - General information are defined in `config/i18n.js`.
