@@ -53,8 +53,8 @@ const PostItem = ({
     >
       <S.PostItemWrapper>
 
-        { postImg && <S.PostItemImg fluid={postImg.node.childImageSharp.fluid} /> } 
-        { !postImg && <S.PostItemImg fluid={postImgCover.node.childImageSharp.fluid} /> } 
+        { postImg && <S.PostItemImg fluid={postImg.node.childImageSharp.fluid} alt={title} /> } 
+        { !postImg && <S.PostItemImg fluid={postImgCover.node.childImageSharp.fluid} alt={title} /> } 
 
         <S.PostItemInfo>
           <S.PostItemTag background={background}>{category}</S.PostItemTag>
