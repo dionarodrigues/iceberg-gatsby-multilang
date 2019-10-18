@@ -5,9 +5,6 @@ import SEO from '../components/seo';
 
 import * as S from '../components/Content/styled';
 
-// The normal <a> tag is modified here (so that internal links use gatsby-link/LocalizedLink
-// More info:
-// https://www.gatsbyjs.org/docs/mdx/customizing-components/
 const Post = props => {
   const post = props.data.markdownRemark;
 
