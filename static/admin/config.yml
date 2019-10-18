@@ -94,7 +94,7 @@ collections:
     label: "Pages (English)" # Used in the UI
     folder: "pages" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     extension: "en.md"
     format: frontmatter
     fields: # The fields for each document, usually in front matter
@@ -113,7 +113,7 @@ collections:
     label: "Pages (Portuguese)" # Used in the UI
     folder: "pages" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     extension: "pt.md"
     format: frontmatter
     fields: # The fields for each document, usually in front matter
