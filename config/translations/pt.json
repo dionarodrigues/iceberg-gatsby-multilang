@@ -2,7 +2,7 @@
   "home": "Início",
 
   "hello": "Olá e bem-vindo à esse exemplo de site usando i18n!",
-  "subline": "Aqui você pode ler alguns dos artigos bacanas que eu encontrei na internet! :)",
+  "subline": "Um simples starter, mas rico em recursos, para a criação de um site utilizando Gatsby em vários idiomas (Internacionalização / i18n) sem plugins ou pacotes de terceiros e também focado em SEO. Este starter também contém outras configurações principais do Gatsby que você poderá precisar. :)",
   "latestPosts": "Útimos posts",
   "category": "Categoria",
   "allPosts": "Todos os Posts",  

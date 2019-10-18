@@ -8,6 +8,7 @@ A simple but feature rich starter boilerplate for creating a multi-language Gats
 - Content in markdown for pages and posts in different languages
 - General translations for any content 
 - Creation of menu by using translations and GraphQL
+- Netlify CMS
 - Styled Components to styles
 - All important seetings for speedy and optimized images
 - Blog Posts list with pagination
