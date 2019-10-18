@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components"
-import media from "styled-media-query"
+import { createGlobalStyle } from 'styled-components';
+import media from 'styled-media-query';
 
 const GlobalStyles = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/
@@ -62,7 +62,7 @@ const GlobalStyles = createGlobalStyle`
 
     font-size: 1.5rem;
     line-height: 160%;
-    ${media.greaterThan("large")`
+    ${media.greaterThan('large')`
       font-size: 1.7rem;
     `}
   }
@@ -108,5 +108,5 @@ const GlobalStyles = createGlobalStyle`
     --space-lg: 3rem;
 
   }
-`
-export default GlobalStyles
+`;
+export default GlobalStyles;

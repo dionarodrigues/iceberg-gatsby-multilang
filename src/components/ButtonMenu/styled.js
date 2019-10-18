@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import media from 'styled-media-query'
+import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const ButtonHamburger = styled.button`
   background: transparent;
@@ -11,9 +11,9 @@ export const ButtonHamburger = styled.button`
   border-radius: 3px;
   top: var(--space-sm);
   left: var(--space-sm);
-  ${media.greaterThan("medium")`
+  ${media.greaterThan('medium')`
     display: none;
-  `} 
+  `}
 
   &.active {
     span {
@@ -53,7 +53,7 @@ export const ButtonHamburger = styled.button`
       width: 100%;
       position: absolute;
       left: 0;
-      transition: .3s;
+      transition: 0.3s;
     }
 
     &:before {
@@ -64,4 +64,4 @@ export const ButtonHamburger = styled.button`
       bottom: -10px;
     }
   }
-`
+`;

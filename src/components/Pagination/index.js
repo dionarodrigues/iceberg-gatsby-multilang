@@ -1,9 +1,9 @@
-import React from "react"
-import propTypes from "prop-types"
-import LocalizedLink from "../LocalizedLink"
-import useTranslations from "../useTranslations"
+import React from 'react';
+import propTypes from 'prop-types';
+import LocalizedLink from '../LocalizedLink';
+import useTranslations from '../useTranslations';
 
-import * as S from './styled'
+import * as S from './styled';
 
 const Pagination = ({
   isFirst,
@@ -13,27 +13,26 @@ const Pagination = ({
   prevPage,
   nextPage,
 }) => {
+  const { next, prev, of } = useTranslations();
 
-  const { next, prev, of } = useTranslations()  
-
-  return(
+  return (
     <S.PaginationWrapper>
       <li>
-      {!isFirst && <LocalizedLink to={prevPage}>
-          ← {prev}
-        </LocalizedLink> }
+        {!isFirst && (
+          <LocalizedLink to={prevPage}>← {prev}</LocalizedLink>
+        )}
       </li>
       <p>
         {currentPage} {of} {numPages}
       </p>
       <li>
-        {!isLast && <LocalizedLink to={nextPage}>
-          {next} →
-        </LocalizedLink> }
+        {!isLast && (
+          <LocalizedLink to={nextPage}>{next} →</LocalizedLink>
+        )}
       </li>
     </S.PaginationWrapper>
-  )
-}
+  );
+};
 
 Pagination.propTypes = {
   isFirst: propTypes.bool.isRequired,
@@ -42,6 +41,6 @@ Pagination.propTypes = {
   numPages: propTypes.number.isRequired,
   prevPage: propTypes.string,
   nextPage: propTypes.string,
-}
+};
 
-export default Pagination
+export default Pagination;

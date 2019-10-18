@@ -1,32 +1,34 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { LocaleContext } from "./Layout"
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import { LocaleContext } from './Layout';
 
 function useMenu() {
   // Grab the locale (passed through context) from the Context Provider
-  const { locale } = React.useContext(LocaleContext)
+  const { locale } = React.useContext(LocaleContext);
   // Query the JSON files in <rootDir>/i18n/translations
-  const { rawData } = useStaticQuery(query)
+  const { rawData } = useStaticQuery(query);
 
   // Simplify the response from GraphQL
   const simplified = rawData.edges.map(item => {
     return {
       name: item.node.name,
       menuItems: item.node.translations.menuItems,
-    }
-  })
+    };
+  });
 
   // Only return menu for the current locale
-  const { menuItems } = simplified.filter(lang => lang.name === locale)[0]
+  const { menuItems } = simplified.filter(
+    lang => lang.name === locale,
+  )[0];
 
-  return menuItems
+  return menuItems;
 }
 
-export default useMenu
+export default useMenu;
 
 const query = graphql`
   query useMenu {
-    rawData: allFile(filter: {sourceInstanceName: {eq: "menu"}}) {
+    rawData: allFile(filter: { sourceInstanceName: { eq: "menu" } }) {
       edges {
         node {
           name
@@ -40,4 +42,4 @@ const query = graphql`
       }
     }
   }
-`
+`;

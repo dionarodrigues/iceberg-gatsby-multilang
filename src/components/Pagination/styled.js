@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import media from "styled-media-query"
+import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const PaginationWrapper = styled.ul`
   align-items: center;
@@ -9,7 +9,7 @@ export const PaginationWrapper = styled.ul`
   padding: 1.5rem 3rem;
   justify-content: space-between;
   list-style: none;
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     padding: 1rem;
   `}
 
@@ -21,4 +21,4 @@ export const PaginationWrapper = styled.ul`
       color: var(--highlight);
     }
   }
-`
+`;

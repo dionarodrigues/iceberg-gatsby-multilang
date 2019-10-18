@@ -1,25 +1,23 @@
-import styled from "styled-components"
-import media from "styled-media-query"
+import styled from 'styled-components';
+import media from 'styled-media-query';
 
-export const Post = styled.article`
-
-`
+export const Post = styled.article``;
 
 export const PostTitle = styled.h1`
   font-size: 4rem;
   font-weight: normal;
 
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     font-size: 2.8rem;
     line-height: 1.1;
   `}
-`
+`;
 
 export const MainContent = styled.section`
   margin: auto;
   max-width: 70rem;
   padding: 2rem 0;
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     padding: 2rem 0;
     max-width: 100%;
   `}
@@ -38,7 +36,7 @@ export const MainContent = styled.section`
     font-weight: 300;
     line-height: 1.7;
     letter-spacing: 0.069rem;
-    ${media.lessThan("large")`
+    ${media.lessThan('large')`
       padding: 0 1rem;
       word-break: break-word;
     `}
@@ -73,12 +71,12 @@ export const MainContent = styled.section`
   }
   img {
     display: block;
-    max-width: 100%;    
+    max-width: 100%;
   }
   iframe {
     padding: 0 1.6rem 1.6rem;
     width: 100%;
-    ${media.lessThan("large")`
+    ${media.lessThan('large')`
       padding: 0 1rem;
     `}
   }
@@ -108,19 +106,19 @@ export const MainContent = styled.section`
   }
   h1 {
     font-size: 2.8rem;
-    ${media.lessThan("large")`
+    ${media.lessThan('large')`
       font-size: 1.875rem;
     `}
   }
   h2 {
     font-size: 2.1rem;
-    ${media.lessThan("large")`
+    ${media.lessThan('large')`
       font-size: 1.375rem;
     `}
   }
   h3 {
     font-size: 1.6rem;
-    ${media.lessThan("large")`
+    ${media.lessThan('large')`
       font-size: 1.125rem;
     `}
   }
@@ -150,7 +148,7 @@ export const MainContent = styled.section`
   }
   .gatsby-highlight {
     padding: 0 1.6rem 1.6rem;
-    ${media.lessThan("large")`
+    ${media.lessThan('large')`
       padding: 0;
     `}
   }
@@ -169,4 +167,4 @@ export const MainContent = styled.section`
       opacity: 0.8;
     }
   }
-`
+`;

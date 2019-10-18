@@ -1,8 +1,8 @@
-import "lazysizes"
+import 'lazysizes';
 
-require("prismjs/themes/prism-tomorrow.css")
+require('prismjs/themes/prism-tomorrow.css');
 
-import CustomLayout from "./wrapPageElement"
+import CustomLayout from './wrapPageElement';
 // import "./src/global.css"
 
-export const wrapPageElement = CustomLayout
+export const wrapPageElement = CustomLayout;

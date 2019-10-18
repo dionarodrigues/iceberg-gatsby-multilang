@@ -38,5 +38,8 @@
     "styled-components": "^4.4.0",
     "styled-icons": "^8.4.2",
     "styled-media-query": "^2.1.2"
+  },
+  "devDependencies": {
+    "prettier": "^1.18.2"
   }
 }

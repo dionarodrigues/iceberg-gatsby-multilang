@@ -1,7 +1,7 @@
-import styled from 'styled-components'
-import media from 'styled-media-query'
-import LocalizedLink from "../LocalizedLink"
-import { Link } from "gatsby"
+import styled from 'styled-components';
+import media from 'styled-media-query';
+import LocalizedLink from '../LocalizedLink';
+import { Link } from 'gatsby';
 
 export const Navigation = styled.nav`
   display: none;
@@ -10,30 +10,30 @@ export const Navigation = styled.nav`
   &.active {
     display: flex;
   }
-  ${media.greaterThan("medium")`
+  ${media.greaterThan('medium')`
     display: flex;
     flex-direction: row;
     align-items: center;
-  `} 
-`
+  `}
+`;
 
 export const NavigationLink = styled(LocalizedLink)`
-  color: var(--text-dark);  
+  color: var(--text-dark);
   text-decoration: none;
   position: relative;
   padding: 0 var(--space-sm);
   margin-bottom: var(--space-sm);
   text-align: center;
-  ${media.greaterThan("medium")`
+  ${media.greaterThan('medium')`
     margin-left: var(--space-sm);
     margin-bottom: 0;
   `}
-  ${media.greaterThan("large")`
+  ${media.greaterThan('large')`
     margin-left: var(--space);
   `} 
 
   &:after {
-    ${media.greaterThan("medium")`
+    ${media.greaterThan('medium')`
       content: '';
       display: inline-block;
       width: 0;
@@ -44,13 +44,13 @@ export const NavigationLink = styled(LocalizedLink)`
       bottom: -10px;
       opacity: 0;
       transition: .3s ease-in-out;
-    `} 
+    `}
   }
 
   &:hover,
   &.active {
     font-weight: bold;
-    ${media.greaterThan("medium")`
+    ${media.greaterThan('medium')`
       font-weight: normal;
     `}
 
@@ -60,18 +60,18 @@ export const NavigationLink = styled(LocalizedLink)`
       width: 100%;
     }
   }
-`
+`;
 
 export const NavigationButton = styled(Link)`
   background: var(--primary-color);
   border-radius: 2px;
   color: #fff;
-  display: inline-block;  
+  display: inline-block;
   padding: var(--space-sm) var(--space);
   text-decoration: none;
   font-weight: bold;
   text-align: center;
-  ${media.greaterThan("medium")`
+  ${media.greaterThan('medium')`
     margin-left: var(--space-lg);
-  `} 
-`
+  `}
+`;

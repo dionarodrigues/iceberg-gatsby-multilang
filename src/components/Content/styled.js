@@ -1,9 +1,9 @@
-import styled from "styled-components"
-import media from "styled-media-query"
+import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const Content = styled.section`
   margin: auto;
-  padding: var(--space-lg) 0;  
+  padding: var(--space-lg) 0;
 
   & > *:first-child {
     margin-top: 0 !important;
@@ -15,7 +15,7 @@ export const Content = styled.section`
 
   iframe {
     width: 100%;
-    ${media.lessThan("large")`
+    ${media.lessThan('large')`
       padding: 0 1rem;
     `}
   }
@@ -23,12 +23,12 @@ export const Content = styled.section`
   a {
     color: var(--link-color);
     text-decoration: none;
-    transition: .3s;
+    transition: 0.3s;
 
     &:hover {
       color: var(--link-color-hover);
     }
-  
+
     &.absent {
       color: #cc0000;
     }
@@ -45,11 +45,11 @@ export const Content = styled.section`
     }
   }
 
-  h1, 
-  h2, 
-  h3, 
-  h4, 
-  h5, 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
   h6 {
     margin: var(--space-lg) 0 var(--space-lg);
     padding: 0;
@@ -67,12 +67,12 @@ export const Content = styled.section`
       text-decoration: none;
     }
 
-    tt, 
+    tt,
     code {
       font-size: inherit;
     }
   }
-  
+
   h1:first-child + h2 {
     margin-top: 0;
     padding-top: 0;
@@ -91,7 +91,7 @@ export const Content = styled.section`
   h1,
   h2 {
     padding-bottom: var(--space);
-    border-bottom: 1px solid var(--border-light); 
+    border-bottom: 1px solid var(--border-light);
   }
 
   h3 {
@@ -111,12 +111,19 @@ export const Content = styled.section`
     font-size: 1.4rem;
   }
 
-  p, blockquote, ul, ol, dl, li, table, pre {
+  p,
+  blockquote,
+  ul,
+  ol,
+  dl,
+  li,
+  table,
+  pre {
     margin: 15px 0;
   }
 
-  hr {    
-    height: .25em;
+  hr {
+    height: 0.25em;
     padding: 0;
     margin: 24px 0;
     background-color: var(--bg-light);
@@ -138,29 +145,29 @@ export const Content = styled.section`
     padding-top: 0;
   }
 
-  & > h3:first-child, 
-  & > h4:first-child, 
-  & > h5:first-child, 
+  & > h3:first-child,
+  & > h4:first-child,
+  & > h5:first-child,
   & > h6:first-child {
     margin-top: 0;
     padding-top: 0;
   }
 
-  a:first-child h1, 
-  a:first-child h2, 
-  a:first-child h3, 
-  a:first-child h4, 
-  a:first-child h5, 
+  a:first-child h1,
+  a:first-child h2,
+  a:first-child h3,
+  a:first-child h4,
+  a:first-child h5,
   a:first-child h6 {
     margin-top: 0;
     padding-top: 0;
   }
 
-  h1 p, 
-  h2 p, 
-  h3 p, 
-  h4 p, 
-  h5 p, 
+  h1 p,
+  h2 p,
+  h3 p,
+  h4 p,
+  h5 p,
   h6 p {
     margin-top: 0;
   }
@@ -169,7 +176,7 @@ export const Content = styled.section`
     display: inline-block;
   }
 
-  ul, 
+  ul,
   ol {
     padding-left: 30px;
 
@@ -225,7 +232,7 @@ export const Content = styled.section`
         }
       }
     }
-  } 
+  }
 
   blockquote {
     border-left: 4px solid #dddddd;
@@ -269,18 +276,17 @@ export const Content = styled.section`
         padding: 6px 13px;
       }
 
-      th:first-child, 
+      th:first-child,
       td:first-child {
         margin-top: 0;
       }
 
-      th:last-child, 
+      th:last-child,
       td:last-child {
         margin-bottom: 0;
       }
     }
   }
-  
 
   img {
     max-width: 100%;
@@ -374,7 +380,8 @@ export const Content = styled.section`
     text-align: right;
   }
 
-  code, tt {
+  code,
+  tt {
     margin: 0 2px;
     padding: 0 5px;
     white-space: nowrap;
@@ -410,10 +417,10 @@ export const Content = styled.section`
     padding: 6px 10px;
     border-radius: 3px;
 
-    code, 
+    code,
     tt {
       background-color: transparent;
       border: none;
     }
   }
-`
+`;

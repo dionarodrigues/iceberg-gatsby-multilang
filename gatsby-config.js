@@ -8,24 +8,24 @@ module.exports = {
   plugins: [
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-styled-components`,
-    `gatsby-transformer-json`, 
-    `gatsby-transformer-sharp`, 
+    `gatsby-transformer-json`,
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    // It needs to be the first one to work with gatsby-remark-images 
+    // It needs to be the first one to work with gatsby-remark-images
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/static/assets/img`,
         name: `uploads`,
       },
-    }, 
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/config/translations`,
         name: `translations`,
       },
-    }, 
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -53,7 +53,7 @@ module.exports = {
         path: `${__dirname}/pages`,
         name: `pages`,
       },
-    },    
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -61,18 +61,18 @@ module.exports = {
           {
             resolve: `gatsby-remark-relative-images`,
             options: {
-              name: `uploads`
-            }
+              name: `uploads`,
+            },
           },
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 1040,
-              linkImagesToOriginal: false
-            }
+              linkImagesToOriginal: false,
+            },
           },
           `gatsby-remark-lazy-load`,
-          `gatsby-remark-prismjs` // It needs to be the last one
+          `gatsby-remark-prismjs`, // It needs to be the last one
         ],
       },
     },
@@ -82,14 +82,14 @@ module.exports = {
         fonts: [
           {
             family: `Open Sans`,
-            variants: [`400`, `600`]
+            variants: [`400`, `600`],
           },
         ],
       },
     },
 
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,    
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -99,11 +99,11 @@ module.exports = {
         background_color: `#16202c`,
         theme_color: `#16202c`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`
+        icon: `src/images/gatsby-icon.png`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    `gatsby-plugin-offline`,    
+    `gatsby-plugin-offline`,
   ],
-}
+};
