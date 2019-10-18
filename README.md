@@ -21,10 +21,19 @@ Assuming [Gatsby](https://github.com/gatsbyjs/gatsby/) is installed, run the fol
 
 ```
 $ git clone https://github.com/diogorodrigues/iceberg-gatsby-multilang.git your-project-name # Clone the project
+
 cd your-project-name
-rm -rf .git # So you can have your own changes stored in VCS.
+
+rm -rf .git 
 yarn install # or npm install
 gatsby develop # or yarn run develop
+```
+
+Running `gatsby develop` you will see the following URLs:
+```
+http://localhost:8000
+http://localhost:8000/___graphql
+http://localhost:8000/admin
 ```
 
 ## File Structure
@@ -60,27 +69,27 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 ```
 
-1. **blog and pages directories**
-All markdown files to generate pages and posts
+1. **blog and pages directories**: 
+All markdown files to generate pages and posts.
 
-2. **config**
+2. **config**: 
 All language settings: languages, strings, menu...
-In `i18n.js` you can setting the languages and some other info
+In `i18n.js` you can set the languages and some others important info
 
-3. **src**
+3. **src**: 
 Components, hooks, templates and fixed pages (Different of markdown pages, these pages have the same url for all languages and the text content needs to be inserted in `config/translations` files). 
 
-4. **static**
+4. **static**: 
 Netlify settings and images.
 
-5. **gatsby-browser.js**
+5. **gatsby-browser.js**: 
 External files and the layout wrapper setting.
 
-6. **gatsby-config.js**
+6. **gatsby-config.js**: 
 Gatsby plugins.
 
-7. **gatsby-node.js**
-Logic to generate pages and posts by manipulating GraphQL.
+7. **gatsby-node.js**: 
+Logic for generating pages and posts by manipulating GraphQL.
 
 8. **wrapPageElement.js**
 As this component wraps every page (due to the wrapPageElement API) we can be sure to have the locale available everywhere!
@@ -105,6 +114,10 @@ backend:
 -   Due to the use of a global layout / context API and the language code passed to all pages (see `gatsby-node.js`), you know on all pages which language is currently displayed.
 -   Blogposts are defined in `blog` directory and pages are defined in `pages` directory. The file names are the `slug` of the posts and pages.
 -   A custom component for the <a> tag is implemented - this way links can stay the same for every language, without the need to manually write path prefixes.
+
+## Deploy
+
+(<a href="https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default" rel="nofollow"><img src="https://camo.githubusercontent.com/be2eb66bb727e25655f1dcff88c2fdca82a77513/68747470733a2f2f7777772e6e65746c6966792e636f6d2f696d672f6465706c6f792f627574746f6e2e737667" alt="Deploy to Netlify" data-canonical-src="https://www.netlify.com/img/deploy/button.svg" style="max-width:100%;"></a>)
 
 ---
 
