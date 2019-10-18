@@ -1,3 +1,5 @@
+<img src="./src/images/logo-iceberg.svg" width="150">
+
 # Gatsby Starter with multi-language and CMS
 
 [Demo on Netlify](https://iceberg-gatsby-multilang.netlify.com/)
