@@ -8,7 +8,8 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "start": "npm run develop"
+    "start": "npm run develop",
+    "prettier": "prettier --write **/*.{md,css,scss,yaml,yml,ts}"
   },
   "dependencies": {
     "gatsby": "^2.3.3",
