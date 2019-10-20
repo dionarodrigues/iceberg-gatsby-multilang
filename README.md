@@ -26,12 +26,13 @@ $ git clone https://github.com/diogorodrigues/iceberg-gatsby-multilang.git your-
 
 cd your-project-name
 
-rm -rf .git 
+rm -rf .git
 yarn install # or npm install
 gatsby develop # or yarn run develop
 ```
 
 Running `gatsby develop` you will see the following URLs:
+
 ```
 http://localhost:8000
 http://localhost:8000/___graphql
@@ -71,30 +72,30 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 ```
 
-1. **blog and pages directories**: 
-All markdown files to generate pages and posts.
+1. **blog and pages directories**:
+   All markdown files to generate pages and posts.
 
-2. **config**: 
-All language settings: languages, strings, menu...
-In `i18n.js` you can set the languages and some others important info
+2. **config**:
+   All language settings: languages, strings, menu...
+   In `i18n.js` you can set the languages and some others important info
 
-3. **src**: 
-Components, hooks, templates and fixed pages (Different of markdown pages, these pages have the same url for all languages and the text content needs to be inserted in `config/translations` files). 
+3. **src**:
+   Components, hooks, templates and fixed pages (Different of markdown pages, these pages have the same url for all languages and the text content needs to be inserted in `config/translations` files).
 
-4. **static**: 
-Netlify settings and images.
+4. **static**:
+   Netlify settings and images.
 
-5. **gatsby-browser.js**: 
-External files and the layout wrapper setting.
+5. **gatsby-browser.js**:
+   External files and the layout wrapper setting.
 
-6. **gatsby-config.js**: 
-Gatsby plugins.
+6. **gatsby-config.js**:
+   Gatsby plugins.
 
-7. **gatsby-node.js**: 
-Logic for generating pages and posts by manipulating GraphQL.
+7. **gatsby-node.js**:
+   Logic for generating pages and posts by manipulating GraphQL.
 
 8. **wrapPageElement.js**
-As this component wraps every page (due to the wrapPageElement API) we can be sure to have the locale available everywhere!
+   As this component wraps every page (due to the wrapPageElement API) we can be sure to have the locale available everywhere!
 
 ## About Netlify CMS
 
@@ -128,4 +129,3 @@ backend:
 ---
 
 This project started based on [this solution](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-i18n) to create a manner to provide translations, but I added a lots of other solutions based on my projects needs (like menu from GraphQL, markdown for pages, pagination, image optmization, styled components, PWA, CMS and more). Feel free to use this solution if you want. :)
-
