@@ -9,7 +9,8 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
-    "prettier": "prettier --write **/*.{md,css,scss,yaml,yml,ts}"
+    "prettier": "prettier --write **/*.{md,css,scss,yaml,yml,ts}",
+    "lint": "eslint src/**/*.{js,jsx}"
   },
   "dependencies": {
     "gatsby": "^2.3.3",
