@@ -40,6 +40,7 @@
     "styled-media-query": "^2.1.2"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.3",
     "prettier": "^1.18.2"
   }
 }

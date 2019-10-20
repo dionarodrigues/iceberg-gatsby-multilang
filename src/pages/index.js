@@ -49,17 +49,17 @@ const Index = ({ data: { allMarkdownRemark } }) => {
               fields: { slug },
             },
           }) => (
-            <PostItem
-              slug={`/blog/${slug}`}
-              background={background}
-              category={category}
-              date={date}
-              timeToRead={timeToRead}
-              title={title}
-              description={description}
-              image={image}
-            />
-          ),
+              <PostItem
+                slug={`/blog/${slug}`}
+                background={background}
+                category={category}
+                date={date}
+                timeToRead={timeToRead}
+                title={title}
+                description={description}
+                image={image}
+              />
+            ),
         )}
       </S.ListWrapper>
 
@@ -75,8 +75,8 @@ export default Index;
 export const query = graphql`
   query Index($locale: String!, $dateFormat: String!, ) {
     allMarkdownRemark(
-      filter: { 
-        fields: { locale: { eq: $locale } } 
+      filter: {
+        fields: { locale: { eq: $locale } }
         fileAbsolutePath: {regex: "/(blog)\/.*\\.md$/"}
       }
       sort: { fields: [frontmatter___date], order: DESC }
