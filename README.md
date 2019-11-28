@@ -19,8 +19,14 @@ A starter Internationalization / i18n without third party plugins or packages fo
 
 ## 🚀 Getting Started
 
-Assuming [Gatsby](https://github.com/gatsbyjs/gatsby/) is installed, run the following commands:
+Assuming [Gatsby](https://github.com/gatsbyjs/gatsby/) is installed, run the following commands to install the project:
 
+**With gatsby-cli*:
+```
+$ gatsby new gatsby-multilanguage-site https://github.com/diogorodrigues/iceberg-gatsby-multilang.git
+```
+
+**With Git Clone**
 ```
 $ git clone https://github.com/diogorodrigues/iceberg-gatsby-multilang.git your-project-name # Clone the project
 
@@ -30,6 +36,7 @@ rm -rf .git
 yarn install # or npm install
 gatsby develop # or yarn run develop
 ```
+
 
 Running `gatsby develop` you will see the following URLs:
 
