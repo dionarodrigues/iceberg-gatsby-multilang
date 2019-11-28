@@ -26,7 +26,7 @@ Assuming [Gatsby](https://github.com/gatsbyjs/gatsby/) is installed, run the fol
 $ gatsby new gatsby-multilanguage-site https://github.com/diogorodrigues/iceberg-gatsby-multilang.git
 ```
 
-**With Git Clone**:
+**With git clone**:
 ```
 $ git clone https://github.com/diogorodrigues/iceberg-gatsby-multilang.git your-project-name # Clone the project
 
