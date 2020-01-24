@@ -11,6 +11,10 @@ const Header = () => {
   const { home } = useTranslations();
   const [toggleMenu, setToggleMenu] = useState(false);
 
+  function handleToggleMenu() {
+    setToggleMenu(!toggleMenu);
+  }
+
   return (
     <S.HeaderWrapper>
       <S.Container>
@@ -23,11 +27,11 @@ const Header = () => {
         </S.NavLanguages>
 
         <ButtonMenu
-          handleClick={() => setToggleMenu(!toggleMenu)}
+          handleClick={handleToggleMenu}
           isActive={toggleMenu}
         />
         <S.NavMenu>
-          <Navigation isActive={toggleMenu} />
+          <Navigation isActive={toggleMenu} handleToggleMenu={handleToggleMenu} />
         </S.NavMenu>
       </S.Container>
     </S.HeaderWrapper>
