@@ -13,7 +13,7 @@ exports.onCreatePage = ({ page, actions }) => {
   // So everything in src/pages/
   deletePage(page);
 
-  // Grab the keys ('en' & 'de') of locales and map over them
+  // Grab the keys ('en' & 'pt') of locales and map over them
   Object.keys(locales).map(lang => {
     // Use the values defined in "locales" to construct the path
     const localizedPath = locales[lang].default
@@ -23,8 +23,8 @@ exports.onCreatePage = ({ page, actions }) => {
     return createPage({
       // Pass on everything from the original page
       ...page,
-      // Since page.path returns with a trailing slash (e.g. "/de/")
-      // We want to remove that
+      // Since page.path returns with a trailing slash (e.g. "/pt/")
+      // We want to remove that (e.g. "pt/")
       path: removeTrailingSlash(localizedPath),
       // Pass in the locale as context to every page
       // This context also gets passed to the src/components/layout file
@@ -79,6 +79,7 @@ exports.onCreateNode = ({ node, actions }) => {
   }
 };
 
+// Creating Posts and Pages for each node in AllMarkdownRemark
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
@@ -91,7 +92,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const result = await graphql(`
     {
-      blog: allMarkdownRemark(
+      files: allMarkdownRemark(
         sort: { fields: [frontmatter___date], order: DESC }
       ) {
         edges {
@@ -116,25 +117,25 @@ exports.createPages = async ({ graphql, actions }) => {
     return;
   }
 
-  // Posts and Pages created by markdown (blog and pages directory)
-  const contentMarkdown = result.data.blog.edges;
+  // Posts and Pages created by markdown (from blog and pages directory)
+  const contentMarkdown = result.data.files.edges;
 
   // Total of posts (only posts, no pages)
   // It will be increase by the next loop
   let postsTotal = 0;
 
   // Creating each post
-  contentMarkdown.forEach(({ node: post }) => {
+  contentMarkdown.forEach(({ node: file }) => {
     // Getting Slug and Title
-    const slug = post.fields.slug;
-    const title = post.frontmatter.title;
+    const slug = file.fields.slug;
+    const title = file.frontmatter.title;
 
     // Use the fields created in exports.onCreateNode
-    const locale = post.fields.locale;
-    const isDefault = post.fields.isDefault;
+    const locale = file.fields.locale;
+    const isDefault = file.fields.isDefault;
 
     // Check if it's page (to differentiate post and page)
-    const isPage = post.frontmatter.page;
+    const isPage = file.frontmatter.page;
 
     // Setting a template for page or post depending on the content
     const template = isPage ? pageTemplate : postTemplate;
