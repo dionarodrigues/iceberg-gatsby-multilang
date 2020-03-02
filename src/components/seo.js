@@ -33,11 +33,16 @@ function SEO({ description, lang, meta, title, image }) {
     const url = site.siteMetadata.siteUrl
     const ogImage = `${url}${image || '/assets/img/cover.png'}`
 
+    // add rtl support - Arabic is Right to Left Language
+    // change ar with your RTL language
+    const dir = locale === 'ar' ? 'rtl' : 'ltr'
+
     return (
         <Helmet
             htmlAttributes={{
                 // fix html lang attribute
                 lang: locale,
+                dir,
             }}
             title={title}
             titleTemplate={`%s | ${site.siteMetadata.title}`}
