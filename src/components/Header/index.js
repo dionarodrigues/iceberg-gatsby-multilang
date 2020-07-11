@@ -1,19 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import useTranslations from '../useTranslations';
 import Navigation from '../Navigation';
 import Languages from '../Languages';
 import ButtonMenu from '../ButtonMenu';
 import Logo from '../Logo';
 
+import { useMenu } from '../../hooks/menu';
+
 import * as S from './styled';
 
 const Header = () => {
   const { home } = useTranslations();
-  const [toggleMenu, setToggleMenu] = useState(false);
-
-  function handleToggleMenu() {
-    setToggleMenu(!toggleMenu);
-  }
+  const { openedMenu, toggleMenu } = useMenu();
 
   return (
     <S.HeaderWrapper>
@@ -26,12 +24,12 @@ const Header = () => {
           <Languages />
         </S.NavLanguages>
 
-        <ButtonMenu
-          handleClick={handleToggleMenu}
-          isActive={toggleMenu}
-        />
-        <S.NavMenu>
-          <Navigation isActive={toggleMenu} handleToggleMenu={handleToggleMenu} />
+        <S.ButtonMenu className={openedMenu ? 'is-active' : ''}>
+          <ButtonMenu handleClick={toggleMenu} isActive={openedMenu} />
+        </S.ButtonMenu>
+
+        <S.NavMenu className={openedMenu ? 'is-active' : ''}>
+          <Navigation />
         </S.NavMenu>
       </S.Container>
     </S.HeaderWrapper>

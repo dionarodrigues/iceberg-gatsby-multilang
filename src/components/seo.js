@@ -5,14 +5,14 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
-import { LocaleContext } from './Layout'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import { useStaticQuery, graphql } from 'gatsby';
+import { useLocale } from '../hooks/locale';
 
 function SEO({ description, lang, meta, title, image }) {
-    const { locale } = React.useContext(LocaleContext)
+    const { locale } = useLocale();
     const { site } = useStaticQuery(
         graphql`
             query {

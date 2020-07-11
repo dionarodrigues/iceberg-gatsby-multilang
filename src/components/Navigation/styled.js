@@ -4,14 +4,10 @@ import LocalizedLink from '../LocalizedLink';
 import { Link } from 'gatsby';
 
 export const Navigation = styled.nav`
-  display: none;
+  display: flex;
   flex-direction: column;
   margin-top: var(--space-sm);
-  &.active {
-    display: flex;
-  }
   ${media.greaterThan('medium')`
-    display: flex;
     flex-direction: row;
     align-items: center;
   `}

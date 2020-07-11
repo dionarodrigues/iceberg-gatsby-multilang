@@ -1,10 +1,10 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { LocaleContext } from './Layout';
+import { useLocale } from '../hooks/locale';
 
 function useMenu() {
   // Grab the locale (passed through context) from the Context Provider
-  const { locale } = React.useContext(LocaleContext);
+  const { locale } = useLocale();
   // Query the JSON files in <rootDir>/i18n/translations
   const { rawData } = useStaticQuery(query);
 

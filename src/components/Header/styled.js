@@ -32,12 +32,21 @@ export const LogoLink = styled(LocalizedLink)`
   width: 170px;
 `;
 
+export const ButtonMenu = styled.div`
+  &.is-active {}
+`;
+
 export const NavMenu = styled.div`
   width: 100%;
+  display: none;
   ${media.greaterThan('medium')`
     margin-left: auto;
     width: auto;
+    display: block;
   `}
+  &.is-active {
+    display: block;
+  }
 `;
 
 export const NavLanguages = styled.div`
