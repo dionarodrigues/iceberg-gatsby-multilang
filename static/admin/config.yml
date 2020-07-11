@@ -1,8 +1,10 @@
 backend:
-    name: github
+    name: github # Local
+    # name: git-gateway # Prod
     repo: diogorodrigues/iceberg-gatsby-multilang
     branch: master
     site_domain: https://iceberg-gatsby-multilang.netlify.com/
+    
 
 publish_mode: editorial_workflow
 media_folder: 'static/assets/img'

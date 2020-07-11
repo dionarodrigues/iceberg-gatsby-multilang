@@ -114,11 +114,14 @@ You must change the Netlify data "repo" and "site_domain" according your Github 
 
 ```
 backend:
-    name: github
+    name: github # Local
+    # name: git-gateway # Prod
     repo: _owner-name/repo-name_ # Path to your GitHub repository
     branch: master
     site_domain: _site-url_ # If site extists
 ```
+
+Realize that you need to use `name: github` for local development and `name: git-gateway` for prod environment (netlify)
 
 ## Important notes:
 
