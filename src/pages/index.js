@@ -58,6 +58,7 @@ const Index = ({ data: { allMarkdownRemark } }) => {
                 title={title}
                 description={description}
                 image={image}
+                key={slug}
               />
             ),
         )}

@@ -49,6 +49,7 @@ const Blog = props => {
               title={title}
               description={description}
               image={image}
+              key={slug}
             />
           ),
         )}

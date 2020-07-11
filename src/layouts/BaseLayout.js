@@ -8,7 +8,7 @@ import { useLocale } from '../hooks/locale';
 
 import * as S from './styled';
 
-const Layout = ({ children, pageContext: { locale } }) => {
+const BaseLayout = ({ children, pageContext: { locale } }) => {
   // Using the useLocale() hook to define the correct locale 
   // that will be available in all components of the tree thought its context
   const { changeLocale } = useLocale();
@@ -28,4 +28,4 @@ const Layout = ({ children, pageContext: { locale } }) => {
   )
 };
 
-export { Layout };
+export { BaseLayout };
