@@ -1,6 +1,6 @@
 backend:
-    name: github # Local
-    # name: git-gateway # Prod
+    #name: github # Local
+    name: git-gateway # Prod
     repo: diogorodrigues/iceberg-gatsby-multilang
     branch: master
     site_domain: https://iceberg-gatsby-multilang.netlify.com/
